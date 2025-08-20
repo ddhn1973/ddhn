@@ -11,7 +11,7 @@
 	font-family: 'Pretendard';
 	font-weight: 700;
 	font-display: swap;
-	src: local('Pretendard Bold'), 
+	src: 
     url(../fonts/Pretendard-Bold.woff2) format('woff2'), 
     url(../fonts/Pretendard-Bold.woff) format('woff');
 }
@@ -49,4 +49,51 @@ ol, ul, li {
 .wrapper {
     width: 1260px;
     margin: 0 auto;
+}
+.nature {
+    margin: 189px 0 0 0;
+}
+.villa {
+    margin: 180px 0 0 0;
+    text-align: center;
+}
+.cycle {
+    margin: 180px 0 200px 0;
+    text-align: right;
+}
+.nature h1,
+.villa h1,
+.cycle h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.nature h1{
+    margin: 0 0 30px 0;
+}
+.nature strong {
+    font-weight: 700;
+    color: #0b759d;
+}
+.villa h1 {
+    margin: 0 0 30px 0;
+}
+.villa strong {
+    color: #1fbabf;
+}
+.cycle h1 {
+    margin: 0 0 30px 0;
+}
+.cycle h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 104px 0 30px 0;
+}
+.cycle strong {
+    color: #60d3aa;
+}
+.cycle p strong {
+    font-weight: 700;
+    text-decoration: underline;
 }
