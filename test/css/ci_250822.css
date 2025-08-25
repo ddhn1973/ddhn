@@ -107,7 +107,7 @@
     display: flex;
     }
 .overview .inner .list ul li:last-child {
-    border-bottom: 1px solid #ededed;
+    border: 1px solid #ededed;
 }
 .overview .inner .list ul li h3 {
     font-weight: 700;

@@ -1,0 +1,39 @@
+@import url(common.css);
+.messenger h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 119px 0 15px 0;
+}
+.messenger strong {
+    color: #00b900;
+}
+.messenger p {
+    margin: 10px 0 0 0;
+}
+.messenger a {
+    display: inline-block;
+    color: #00b900;
+    margin: 20px 0 42px 0;
+    border: 1px solid #00b900;
+    padding: 6px 30px 6px 30px;
+}
+.market {
+    color: #fff;
+    background: url(../images/market_bg.jpg) no-repeat center center / cover;
+    margin: 97px 0 0 0;
+    padding: 119px 0 0 0;
+    height: 644px;
+    text-align: center;
+}
+.market h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+}
+.market a {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 6px 30px 6px 30px;
+    margin: 34px 0 34px 0;
+}
