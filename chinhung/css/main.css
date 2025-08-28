@@ -112,6 +112,9 @@ footer .f_nav ul {
     display: flex;
     gap: 0 42px; /* 위아래 - 좌우 값 */
 }
+footer .f_nav ul li.privacy a {
+    font-weight: 700;
+}
 footer .f_info {
     margin: 18px 0 18px 0;
     display: flex;
