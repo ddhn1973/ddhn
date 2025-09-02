@@ -245,3 +245,15 @@ footer .inner .f_info .group {
     display: flex;
     gap: 0 42px;
 }
+footer .inner .copyright {
+    color: rgba(255, 255, 255, 0.6);
+}
+footer .family_site button {
+    width: 190px;
+    line-height: 46px;
+    background-color: #ededed;
+    color: #666;
+    display: block;
+    text-align: left;
+    padding: 0 0 0 16px;
+}
