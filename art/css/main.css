@@ -95,11 +95,21 @@ header nav ul li a {
     object-fit: cover;
 }
 .community {
-    background: url(../images/community_bg.jpg) no-repeat center top / auto 834px;
     margin: 220px 0 0 0;
     color: #fff;
     /* height: 910px; - 콘텐츠가 배경보다 더 길어서 배경의 높이만큼 주면X 
     background가 높이니까 background의 높이값을 주면 됨...*/
+    position: relative; /* before의 기준 */
+}
+.community::before {
+    content: "";
+    position: absolute; /* community의 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 834px;
+    background: url(../images/community_bg.jpg) no-repeat center center / cover;
 }
 .community .news {
     padding: 156px 0 0 0;
@@ -107,23 +117,13 @@ header nav ul li a {
 .community .news .wrapper {
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 .community .news .tit h2 {
     font-size: 40px;
     font-weight: 800;
     letter-spacing: -0.02em;
     margin: 24px 0 20px 0; 
-}
-.community .news .tit a {
-    display: inline-block;
-    border: 1px solid #fff;
-    padding: 10px 20px 10px 20px;
-    border-radius: 30px;
-    margin: 56px 0 0 0;
-}
-.community .news .tit a:hover {
-    background-color: #fff;
-    color: #B40023;
 }
 .community .news .list {
     width: 725px;
@@ -154,8 +154,24 @@ header nav ul li a {
 .community .news .list ul li a span {
     color: rgba(255, 255, 255, 0.8);
 }
+.community .news a.more {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 10px 20px 10px 20px;
+    border-radius: 30px;
+    position: absolute; /* more 정렬의 기준 */
+    left: 0;
+    top: 220px;
+}
+.community .news a.more:hover {
+    background-color: #fff;
+    color: #B40023;
+}
 .community .media {
     margin: 150px 0 0 0;
+}
+.community .media .wrapper {
+    position: relative;
 }
 .community .media .tit {
     display: flex;
@@ -166,16 +182,6 @@ header nav ul li a {
     font-size: 40px;
     font-weight: 800;
     letter-spacing: -0.02em;
-}
-.community .media .tit a {
-    display: inline-block;
-    border: 1px solid #fff;
-    padding: 10px 20px 10px 20px;
-    border-radius: 30px;
-}
-.community .media .tit a:hover {
-    background-color: #fff;
-    color: #B40023;
 }
 .community .media .list {
     margin: 45px 0 0 0;
@@ -219,6 +225,19 @@ header nav ul li a {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 }
+.community .media a.more {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 10px 20px 10px 20px;
+    border-radius: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.community .media a.more:hover {
+    background-color: #fff;
+    color: #B40023;
+}
 footer {
     margin: 100px 0 120px 0;
 }
@@ -228,15 +247,41 @@ footer .wrapper {
     display: flex;
     justify-content: space-between;
 }
-footer .inner .f_nav ul li {
+footer .inner .f_nav ul {
     display: flex;
     gap: 0 42px;
 }
+footer .inner .f_nav ul li{
+    position: relative;
+}
+footer .inner .f_nav ul li::after {
+    content: "";
+    position: absolute;
+    right: -23px;
+    top: 6px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(204, 204, 204, 100);
+}
+footer .inner .f_nav ul li:last-child::after {
+    display: none;
+}
 footer .inner .f_nav ul li a {
     display: block;
+    position: relative; /* after 정렬의 기준 */
 }
-footer .inner .f_nav ul li a:hover {
-    text-decoration: underline;
+footer .inner .f_nav ul li a::after {
+    content: "";
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 0;
+    bottom: 0;
+    width: 0%; /* 기준이되는 a의 100% */
+    height: 1px;
+    background-color: rgba(204, 204, 204, 100);
+    transition: 0.3s;
+}
+footer .inner .f_nav ul li a:hover:after {
+    width: 100%;
 }
 footer .inner .f_info {
     margin: 20px 0 20px 0;
@@ -256,4 +301,17 @@ footer .family_site button {
     display: block;
     text-align: left;
     padding: 0 0 0 16px;
+    position: relative;
+}
+footer .family_site button::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-color: #666;
+    border-style: solid;
+    border-width: 0 0 1px 1px;
+    position: absolute;
+    right: 21px;
+    top: 16px;
+    transform: rotate(-45deg);
 }
