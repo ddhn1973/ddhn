@@ -1,0 +1,76 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 90px;
+    color: #fff;
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .gnb ul {
+    display: flex;
+}
+header .gnb ul li a {
+    display: block;
+    line-height: 90px;
+    padding: 0 20px 0 20px;
+}
+.visual {
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    border-radius: 0 0 200px 0;
+}
+.visual .wapper {
+    height: 100vh; /* 브라우저의 높이에 맞춰서 */
+    min-height: 580px;
+    position: relative;
+}
+.visual h2 {
+    padding: 40vh 0 0 0;
+    text-align: center;
+}
+.visual .life {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #256DD3;
+    color: #fff;
+    display: block;
+    text-align: center;
+    padding: 106px 0 0 0;
+    box-shadow: -4px 3px 5px 0 rgba(0, 0, 0, 0.1);
+    position: absolute; /* before 정렬의 기준 */
+    right: 200px;
+    bottom: -100px;
+}
+.visual .life::before {
+    content: "";
+    position: absolute; /* life 정렬의 기준 */
+    left: 0;
+    top: 42px;
+    width: 100%;
+    height: 60px;
+    background: url(../images/life_ico.svg) no-repeat center top ;
+}
+/* life 오버스타일 */
+.visual .life:hover {
+    background-color: #021F4A;
+    box-shadow: -4px 3px 5px 0 rgba(0, 0, 0, 0.25);
+}
+.visual .life strong {
+    font-weight: 800;
+}
+
+
+
+footer {
+    margin: 1000px 0 0 0;
+}
