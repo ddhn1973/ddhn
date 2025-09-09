@@ -1,0 +1,9 @@
+.box {
+    width: 500px;
+    height: 500px;
+    background-color: #01A014;
+    color: #fff;
+}
+.box.on {
+    background-color: red;
+}
