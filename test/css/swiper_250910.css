@@ -1,0 +1,98 @@
+@import url(common.css);
+
+.visual {
+    position: relative;
+}
+.visual .swiper-slide {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1920px;
+    height: 800px;
+    color: #fff;
+}
+.visual .swiper-slide.bg1 {
+    background-image: url(../images/swiper_1.jpg);
+}
+.visual .swiper-slide.bg2 {
+    background-image: url(../images/swiper_2.jpg);
+}
+.visual .swiper-slide.bg3 {
+    background-image: url(../images/swiper_3.jpg);
+}
+.visual .swiper-slide h2 {
+    font-size: 60px;
+    font-weight: 800;
+    margin: 306px 0 24px 0;
+}
+.visual .ctrl_btn {
+    position: absolute;
+    left: 0;
+    bottom: 24px;
+    z-index: 1;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 0 16px;
+}
+.visual .ctrl_btn .btn_prev,
+.visual .ctrl_btn .btn_next,
+.visual .ctrl_btn .btn_stop,
+.visual .ctrl_btn .btn_play {
+    width: 28px;
+    height: 28px;
+    background: url(../images/swiper_arrow.svg) no-repeat center center;
+}
+.visual .ctrl_btn .btn_next {
+    transform: rotate(180deg);
+}
+.visual .ctrl_btn .paging {
+    width: auto; /* 넓이 100%로 들어간 값을 취소시키려고 */
+    font-weight: 800;
+}
+.visual .ctrl_btn .btn_play {
+    background: url(../images/swiper_play.svg) no-repeat center center;
+    display: none;
+}
+.visual .ctrl_btn .btn_stop {
+    background: url(../images/swiper_pause.svg) no-repeat center center;
+}
+.visual .ctrl_btn .btn_next {
+    background: url(../images/swiper_arrow.svg) no-repeat center center;
+}
+.news {
+    margin: 100px 0 100px 0;
+}
+.news .tit h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #1d1d1d;
+    margin: 0 0 16px 0;
+}
+.news .list {
+    margin: 48px 0 0 0;
+}
+.news .lis  t .swiper-slide a {
+    display: block;
+}
+.news .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 236px;
+}
+.news .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.news .list .swiper-slide a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.news .list .swiper-slide a h3 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1d1d1d;
+    margin: 16px 0 16px 0;
+    
+}

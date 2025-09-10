@@ -547,6 +547,9 @@ footer .right_area .family_site .family_detail {
     padding: 8px 0 8px 16px;
     display: none;
 }
+footer .right_area .family_site.open .family_detail {
+    display: block; /* ← open 붙으면 열림 */
+}
 footer .right_area .family_site .family_detail ul li a {
     display: block;
     padding: 4px 0 4px 0;
