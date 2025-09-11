@@ -1,0 +1,183 @@
+@import url(common.css);
+
+.asia{
+    margin: 240px 0 0 0;
+}
+.asia .wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    gap: 0 24px;
+}
+.asia .tit h2 {
+    font-size: 30px;
+    font-weight: 800;
+    color: #1d1d1d;
+    margin: 0 0 16px 0;
+}
+
+@media screen and (max-width:768px) {
+    .asia{
+        margin: 120px 0 0 0;
+    }
+    .asia .wrapper {
+        display: block;
+    }
+    .asia .tit h2 {
+        font-size: 25px;
+        margin: 0 0 8px 0;
+    }
+    .asia .photo {
+        margin: 48px 0 0 0;
+    }
+    .asia .photo img {
+        width: 100%;
+    }
+} /* @media */
+
+.photo_wrap {
+    margin: 50px 0 0 0;
+}
+
+.photo_wrap .photo {
+    overflow: hidden;
+    width: 832px;
+    height: 589px;
+}
+.photo_wrap .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width:768px) {
+    .photo_wrap {
+        margin: 30px 0 0 0;
+    }
+    
+    .photo_wrap .photo {
+        width: auto;
+        height: 197px;
+    }
+} /* @media */
+
+.mission {
+    margin: 240px 0 100px 0;
+    text-align: center;
+}
+.mission strong {
+    font-size: 30px;
+    font-weight: 800;
+    color: #1d1d1d;
+}
+.mission h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #1d1d1d;
+    margin: 32px 0 56px 0;
+}
+.mission h2 br.mo_only {
+    display: none;
+}
+@media screen and (max-width:768px) {
+    .mission {
+        margin: 120px 0 100px 0;
+    }
+    .mission strong {
+        font-weight: 800;
+        color: #1d1d1d;
+    }
+    .mission h2 {
+        font-size: 40px;
+        margin: 24px 0 56px 0;
+    }
+    .mission h2 br.mo_only {
+        display: block;
+    }
+    .mission h2 br.pc_only {
+        display: none;
+    }
+    .mission p br {
+        display: none;
+    }
+} /* @media */
+
+.winner {
+    margin: 240px 0 500px 0;
+}
+.winner .tit h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #1d1d1d;
+    margin: 32px 0 0 0;
+}
+.winner .list {
+    margin: 56px 0 0 0;
+}
+.winner .list .swiper-slide a {
+    display: block;
+}
+.winner .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 308px;
+}
+.winner .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.winner .list .swiper-slide a h3 {
+    font-size: 30px;
+    font-weight: 800;
+    color: #1d1d1d;
+    margin: 24px 0 0 0;
+    position: relative; /* before 정렬의 기준 */
+    padding: 4px 8px 4px 8px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: 0.4s;
+}
+.winner .list .swiper-slide a h3::before {
+    content: "";
+    position: absolute; /* h3 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 0%;
+    height: 100%;
+    background-color: #E7336E;
+    transition: 0.6s;
+}
+.winner .list .swiper-slide a:hover h3 {
+    color: #fff;
+}
+.winner .list .swiper-slide a:hover h3::before {
+    width: 100%;
+}
+@media screen and (max-width:768px) {
+    .winner {
+        margin: 120px 0 500px 0;
+    }
+    .winner .tit h2 {
+        font-size: 25px;
+        margin: 16px 0 0 0;
+    }
+    .winner .list {
+        margin: 32px 0 0 0;
+    }
+    .winner .list .swiper-slide {
+        width: 200px;
+    }
+    .winner .list .swiper-slide a .photo {
+        height: 161px;
+    }
+    .winner .list .swiper-slide a h3 {
+        margin: 12px 0 0 0;
+        padding: 2px 8px 2px 8px;
+    
+        white-space: wrap;
+        overflow: visible;
+    }
+}/* @media */
