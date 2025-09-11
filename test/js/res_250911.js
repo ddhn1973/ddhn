@@ -3,7 +3,7 @@ $(document).ready(function(){
         console.log('연결')
         
         const winner_swiper = new Swiper('.winner .swiper', { /* 팝업을 감싼는 요소의 class명 */
-        slidesPerView: , /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
         spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
         breakpoints: {
             450: {    /* 640px 이상일때 적용 */
