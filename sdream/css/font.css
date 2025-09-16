@@ -1,13 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
 @font-face {
-    font-family: 'Paperozi';
-    src: url('../font/Paperlogy-4Regular.woff2') format('woff2');
-    font-weight: 400;
+    font-family: 'GM';
+    src: url('../font/GmarketSansLight.woff') format('woff');
+    font-weight: 300;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Paperozi';
-    src: url('../font/Paperlogy-8ExtraBold.woff2') format('woff2');
-    font-weight: 800;
+    font-family: 'GM';
+    src: url('../font/GmarketSansMedium.woff') format('woff');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GM';
+    src: url('../font/GmarketSansBold.woff') format('woff');
+    font-weight: 700;
     font-display: swap;
 }
