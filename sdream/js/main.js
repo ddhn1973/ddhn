@@ -31,9 +31,13 @@ $(document).ready(function(){
     $('.visual .btn_wrap .btn_play').on('click', function(){
         console.log('실행버튼 누름')
         visual_swiper.autoplay.start();
+        $(this).hide()
+        $('.visual .btn_wrap .btn_stop').show()
     })
     $('.visual .btn_wrap .btn_stop').on('click', function(){
         console.log('정지버튼 누름')
         visual_swiper.autoplay.stop();
+        $(this).hide()
+        $('.visual .btn_wrap .btn_play').show()
     })
 }) // 끝임
