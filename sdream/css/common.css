@@ -10,12 +10,22 @@ body {
     line-height: 1.5;
     color: #333A46;
     word-break: keep-all;
+    word-wrap: break-word;
+    /* 단어가 너무 길었을때 강제줄바꿈 */
 }
 .wrapper {
     width: 1260px;
     margin: 0 auto; /* 가운데 정렬 */
 }
 #wrap {
-    min-width: 1460px; /*1260+20+20=1300*/
+    min-width: 1320dpx; /*1260+30+30=1320*/
     position: relative;
+}
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
 }
