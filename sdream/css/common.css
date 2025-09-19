@@ -20,6 +20,7 @@ body {
 #wrap {
     min-width: 1320px; /*1260+30+30=1320*/
     position: relative;
+    /* overflow: hidden; */
 }
 .blind {
     position: absolute;
