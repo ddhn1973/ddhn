@@ -1,0 +1,56 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+section h2,
+section h3 {
+    font-family: 'Eulyoo1945';
+    font-weight: 700;
+    line-height: 1.3;
+}
+section .tit h2 {
+    font-size: 40px;
+    color: #111;
+}
+section .tit p {
+    margin: 14px 0 0 0;
+}
+.visual {
+    position: relative;
+}
+.visual .swiper-slide {
+    height: 100dvh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    
+}
+.visual .swiper-slide.popup1 {
+    background-image: url(../image/visual_bg1.jpg);
+}
+.visual .swiper-slide.popup2 {
+    background-image: url(../image/visual_bg2.jpg);
+}
+.visual .swiper-slide.popup3 {
+    background-image: url(../image/visual_bg3.jpg);
+}
+
+.visual .swiper-slide h3 {
+    font-size: 60px;
+    margin: 0 0 14px 0;
+}
+.visual .swiper-slide p {
+    margin: 0 0 7dvh 0;
+}
+.visual .ctrl_btn {
+    position: absolute;
+    bottom: 5dvh;
+    left: 50%;
+    z-index: 10;
+    display: flex;
+}
+
+footer {
+    margin: 500px 0 0 0;
+}
