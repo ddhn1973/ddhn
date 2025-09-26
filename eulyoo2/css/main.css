@@ -669,9 +669,287 @@ header.fixed .util .search .search_open {
         display: none;
     }
 }
-
-
+.story {
+    margin: 172px 0 126px 0;
+}
+.story .wrapper {
+    position: relative;
+}
+.story .list {
+    margin: 72px 0 0 0;
+}
+.story .list .swiper-slide a {
+    display: block;
+}
+.story .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 297px;
+}
+.story .list .swiper-slide.long a .photo {
+    height: 426px;
+}
+.story .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.story .list .swiper-slide a .txt h3 {
+    font-size: 24px;
+    color: #111111;
+    margin: 10px 0 0 0;
+    line-height: 1.3;
+    height: 1.3em;
+    overflow: hidden;
+}
+.story .list .swiper-slide a .txt p {
+    margin: 10px 0 0 0;
+    line-height: 1.5;
+    height: 10.5em;
+    overflow: hidden;
+    word-break: break-all;
+}
+.story .list .swiper-slide.long a .txt p {
+    line-height: 1.5;
+    height: 3em;
+    overflow: hidden;
+    word-break: break-all;
+}
+.story .list .swiper-slide a .txt span {
+    display: inline-block;
+    margin: 40px 0 0 0;
+    padding: 0 32px 0 0;
+    position: relative;
+}
+.story .list .swiper-slide a .txt span::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_29_760' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect x='24' y='24' width='24' height='24' transform='rotate(-180 24 24)' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_29_760)'%3E%3Cpath d='M16.175 11L10.575 5.4L12 4L20 12L12 20L10.575 18.6L16.175 13L4 13L4 11L16.175 11Z' fill='%23363636'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.story .ctrl_btn {
+    position: absolute;
+    right: 117px;
+    top: 0;
+    display: flex;
+    gap: 0 8px;
+}
+.story .ctrl_btn button {
+    width: 34px;
+    height: 34px;
+    border: 1px solid #111111;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.825 9L9.425 14.6L8 16L0 8L8 0L9.425 1.4L3.825 7L16 7V9L3.825 9Z' fill='%23363636'/%3E%3C/svg%3E%0A");
+}
+.story .ctrl_btn button.btn_next {
+    transform: rotate(180deg);
+}
+.story .more {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.story .more a {
+    display: block;
+    padding: 4px 48px 4px 16px;
+    border: 1px solid #111111;
+    border-radius: 20px;
+    position: relative;
+}
+.story .more a::after {
+    content: "";
+    position: absolute;
+    right: 16px;
+    top: 5px;
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_29_741' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_29_741)'%3E%3Cpath d='M11 13H5V11H11V5H13V11H19V13H13V19H11V13Z' fill='%23363636'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+@media screen and (max-width:768px){
+        .story {
+            margin: 87px 0 56px 0;
+        }
+        .story .list {
+            margin: 32px 0 0 0;
+        }
+        .story .list .swiper-slide {
+            width: 200px;
+        }
+        .story .list .swiper-slide a .photo {
+            height: 200px;
+        }
+        .story .list .swiper-slide.long a .photo {
+            height: 293px;
+        }
+        .story .list .swiper-slide a .txt h3 {
+            font-size: 18px;
+            margin: 10px 0 0 0;
+            height: auto;
+            overflow: visible;
+        }
+        .story .list .swiper-slide a .txt p {
+            margin: 10px 0 0 0;
+            font-size: 16px;
+            line-height: 1.5;
+            height: 9em;
+            overflow: hidden;
+            word-break: break-all;
+        }
+        .story .list .swiper-slide.long a .txt p {
+            line-height: 1.5;
+            height: 3em;
+            overflow: hidden;
+            word-break: break-all;
+        }
+        .story .list .swiper-slide a .txt span {
+            display: inline-block;
+            margin: 40px 0 0 0;
+            padding: 0 32px 0 0;
+            position: relative;
+        }
+        .story .list .swiper-slide a .txt span::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_29_760' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect x='24' y='24' width='24' height='24' transform='rotate(-180 24 24)' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_29_760)'%3E%3Cpath d='M16.175 11L10.575 5.4L12 4L20 12L12 20L10.575 18.6L16.175 13L4 13L4 11L16.175 11Z' fill='%23363636'/%3E%3C/g%3E%3C/svg%3E%0A");
+        }
+        .story .ctrl_btn {
+            display: none;
+        }
+        .story .more {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .story .more a {
+            display: block;
+            padding: 0;
+            border: 1px solid #111111;
+            border-radius: 20px;
+            position: relative;
+        }
+        .story .more a::after {
+            content: "";
+            position: absolute;
+            right: 16px;
+            top: 5px;
+            width: 24px;
+            height: 24px;
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_29_741' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_29_741)'%3E%3Cpath d='M11 13H5V11H11V5H13V11H19V13H13V19H11V13Z' fill='%23363636'/%3E%3C/g%3E%3C/svg%3E%0A");
+        }
+}
 
 footer {
-    margin: 1000px 0 0 0;
+    margin: 125px 0 0 0;
+    background-color: #231816;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 92px 0 92px 0;
+    position: relative;
+}
+footer .top {
+    position: absolute;
+    right: 3%;
+    bottom: 100px;
+    width: 49px;
+    height: 49px;
+    background-color: #F6F3EC;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='46' height='46' viewBox='0 0 46 46' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_29_798' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='46' height='46'%3E%3Crect x='45.5' y='0.5' width='45' height='45' transform='rotate(90 45.5 0.5)' fill='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_29_798)'%3E%3Cpath d='M21.125 15.1719L10.625 25.6719L8 23L23 8L38 23L35.375 25.6719L24.875 15.1719L24.875 38L21.125 38L21.125 15.1719Z' fill='%23363636'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+footer .wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+footer .slogan {
+    font-family: "Eulyoo1945";
+    color: #fff;
+    font-size: 24px;
+    line-height: 1.3;
+}
+footer .f_info .group + .group {
+    margin: 34px 0 0 0;
+}
+footer .f_info .group h3 {
+    font-family: "Eulyoo1945";
+    font-size: 24px;
+    line-height: 1.3;
+    margin: 0 0 10px 0;
+}
+footer .f_info .group ul {
+    display: flex;
+    gap: 0 32px;
+}
+footer .copyright {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+footer .copyright .f_logo img {
+    width: 162px;
+}
+footer .copyright p {
+    color: rgba(255, 255, 255, 0.6);
+    margin: 12px 0 0 0;
+}
+
+@media screen and (max-width:768px){
+            footer {
+                margin: 125px 0 0 0;
+                padding: 92px 0 92px 0;
+
+            }
+            footer .top {
+                right: 17px;
+                bottom: auto;
+                top: -19px;
+                width: 49px;
+                height: 49px;
+                background-color: #6C4B44;
+                border-radius: 0;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-image: url("data:image/svg+xml,%3Csvg width='46' height='46' viewBox='0 0 46 46' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_29_798' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='46' height='46'%3E%3Crect x='45.5' y='0.5' width='45' height='45' transform='rotate(90 45.5 0.5)' fill='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_29_798)'%3E%3Cpath d='M21.125 15.1719L10.625 25.6719L8 23L23 8L38 23L35.375 25.6719L24.875 15.1719L24.875 38L21.125 38L21.125 15.1719Z' fill='%23F6F3EC'/%3E%3C/g%3E%3C/svg%3E%0A");
+            }
+            footer .wrapper {
+                display: block;
+            }
+            footer .slogan {
+                font-size: 20px;
+                margin: 0 0 56px 0;
+            }
+            footer .f_info .group + .group {
+                margin: 30px 0 0 0;
+            }
+            footer .f_info .group h3 {
+                font-size: 18px;
+                margin: 0 0 5px 0;
+            }
+            footer .f_info .group ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0 26px;
+            }
+            footer .copyright {
+                position: relative;
+                left: auto;
+                bottom: auto;
+                margin: 65px 0 0 0;
+            }
+            footer .copyright .f_logo img {
+                width: 138px;
+            }
 }
