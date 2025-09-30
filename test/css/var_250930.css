@@ -1,0 +1,279 @@
+@import url(common.css);
+
+
+.test {
+    margin: 50px 0 0 0;
+}
+.test h2 {
+    font-size: 40px;
+}
+.test h2 strong {
+    font-size: 20px;
+}
+.test h3 {
+    font-size: 2.5em;
+}
+.test h3 strong {
+    font-size: 2em;
+}
+.test h4 {
+    font-size: 2.5rem;
+}
+.test h4 strong {
+    font-size: 2rem;
+}
+.test h5 {
+    font-size: 2.5vw;
+}
+.test h5 strong {
+    font-size: 1vw;
+}
+.test h6 {
+    font-size: clamp(24px, 3vw, 40px);
+}
+
+
+.news {
+    margin: 169px 0 0 0;
+}
+.news .wrapper {
+    display: flex;
+    position: relative;
+}
+.news .tit h2 {
+    font-size: var(--tit-font-size);
+    color: var(--tit-color);
+    line-height: var(--tit-line-height);
+    font-weight: var(--bold-weight);
+    margin: 0 0 17px 0;
+}
+.news .tit h2 span {
+    display: block;
+}
+.news .tit {
+    width: 34%;
+}
+.news .list {
+    width: 66%;
+}
+.news .list ul li {
+    border-bottom: 1px solid #ccc;
+}
+.news .list ul li:first-child {
+    border-top: 1px solid #ccc;
+}
+.news .list ul li a {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 0 24px 0;
+}
+.news .list ul li a h3 {
+    font-size: var(--h3-font-size);
+    color: var(--tit-color);
+    line-height: var(--tit-line-height);
+    font-weight: var(--bold-weight);
+
+    width: calc(100% - 160px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* 한줄제한 */
+
+.news .more {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.news .more a {
+    display: flex;
+    align-items: center;
+    gap: 0 11px;
+}
+.news .more a i {
+    width: 7px;
+}
+.news .more a i svg {
+    width: 100%;
+    height: 100%;
+}
+@media screen and (max-width:768px) {
+    .news {
+        margin: 95px 0 0 0;
+    }
+    .news .tit h2 {
+        margin: 0;
+    }
+    .news .tit h2 span {
+        display: none;
+    }
+    .news .tit p {
+        display: none;
+    }
+    .news .wrapper {
+        display: block;
+    }
+    .news .tit {
+        width: auto;
+    }
+    .news .list {
+        width: auto;
+        margin: 40px 0 0 0  ;
+    }
+    .news .list ul li a {
+        display: block;
+        padding: 16px 0 16px 0;
+    }
+    .news .list ul li a h3 {
+        width: auto;
+        white-space: wrap;
+        overflow: visible;
+        margin: 0 0 8px 0;
+    }
+    /* 한줄제한 */
+    
+    .news .more {
+        position: absolute;
+        left: auto;
+        right: 0;
+        top: 0;
+        bottom: auto;
+    }
+    .news .more a {
+        justify-content: center;
+        gap: 0;
+        width: 32px;
+        height: 32px;
+        border: 1px solid #666;
+        border-radius: 50%;
+    }
+    .news .more a span {
+        display: none;
+    }
+    .news .more a i {
+        width: 6px;
+    }
+}
+
+.notice {
+    margin: 97px 0 0 0;
+    padding: 164px 0 104px 0;
+    background-color: #2d2d2d;
+    color: rgba(255, 255, 255, 0.8);
+}
+.notice .wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.notice .tit h2 {
+    font-size: var(--tit-font-size);
+    color: #fff;
+    line-height: var(--tit-line-height);
+    font-weight: var(--bold-weight);
+    margin: 0 0 17px 0;
+}
+.notice .tit h2 span {
+    display: block;
+}
+.notice .list {
+    max-width: 832px;
+    width: calc(100% - 235px);
+}
+.notice .list ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.notice .list ul li:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.notice .list ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0 24px 0;
+}
+.notice .list ul li a h3 {
+    color: #fff;
+    font-size: var(--h3-font-size);
+    line-height: var(--tit-line-height);
+    font-weight: var(--bold-weight);
+
+    width: calc(100% - 160px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.notice .more {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.notice .more a {
+    display: flex;
+    align-items: center;
+    gap: 0 11px;
+}
+.notice .more a i {
+    width: 7px;
+}
+.notice .more a i svg {
+    width: 100%;
+    height: 100%;
+}
+.notice .more a i svg path {
+    fill: rgba(255, 255, 255, 0.6);
+}
+@media screen and (max-width:768px) {
+    .notice {
+        margin: 62px 0 0 0;
+        padding: 100px 0 63px 0;
+    }
+    .notice .wrapper {
+        flex-direction: column;
+        gap: 40px 0;
+    }
+    .notice .tit h2 {
+        margin: 0;
+    }
+    .notice .tit h2 span {
+        display: none;
+    }
+    .notice .tit p {
+        display: none;
+    }
+    .notice .list {
+        max-width: 100%;
+        width: auto;
+    }
+    .notice .list ul li a {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 0 16px 0;
+        gap: 8px 0;
+    }
+    .notice .list ul li a h3 {
+        color: #fff;
+        font-size: var(--h3-font-size);
+        line-height: var(--tit-line-height);
+        font-weight: var(--bold-weight);
+    
+        width: calc(100% - 160px);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .notice .more {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        display: flex;
+        justify-content: center;
+        
+    }
+    .notice .more a {
+        gap: 0 8px;
+        background-color: #555;
+        border-radius: 20px;
+        padding: 4px 20px 4px 20px;
+    }
+}

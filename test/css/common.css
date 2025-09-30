@@ -16,9 +16,9 @@
     url(../fonts/Pretendard-Bold.woff) format('woff');
 }
 /* body에 기본 글자 스타일(본문 스타일) 적용 */
-body {
+html, body {
     font-family: 'Pretendard';
-    font-size: 17px;
+    font-size: var(--base-font-size);
     font-weight: 400;
     color: #555; /* 555555 => 6글자가 같으면 3개만 써도됨 */
     line-height: 1.5;
@@ -96,15 +96,38 @@ button {
 */
 
 
-@media screen and (max-width:1320px) {
+@media screen and (max-width:1386px) {
     .wrapper {
         width: auto;
-        margin:  0 30px;
+        margin:  0 5%;
     }
 }
 @media screen and (max-width:768px) {
 /* 브라우저 사이즈 768px 부터 그 이하의 사이즈에서만 적용 */
-                        body {
+                        html, body {
                             font-size: 16px;
                         }
+                        .wrapper {
+                            margin:  0 16px;
+                        }
 } /* @media */
+
+/* css변수 - 값은 media를 이용해서 수치는 변경가는
+선언한 변수를 css에서 사용방법은 font-size: var(--base-font-size);
+앞에 -- 두개는 반드시 포함되어야함 */
+
+:root {
+    --base-font-size: 17px;
+    --tit-color: #1d1d1d;
+    --tit-font-size: 40px;
+    --h3-font-size: 22px;
+    --tit-line-height: 1.3;
+    --bold-weight: 800;
+}
+@media screen and (max-width:768px) {
+    :root {
+        --base-font-size: 16px;
+        --tit-font-size: 24px;
+        --h3-font-size: 18px;
+    }
+}
