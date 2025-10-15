@@ -1,10 +1,36 @@
 /* 모든페이지에서 중복되는 스타일 */
+
+:root {
+    --font-size--basic : 17px;
+    --font-size--title : 40px;
+    --font-size--title2 : 20px;
+    --font-weight-basic : 400;
+    --font-weight-bold : 700;
+    --line-height-basic : 1.5;
+    --color-title : #1d1d1d;
+    --color-basic : #1d1d1d;
+    --color-main : #FF4E00;
+    --color-main2 : #0900FF;
+    --color-white : #fff;
+    --color-white80 : rgba(255, 255, 255, 0.8);
+    --color-line : #ededed;
+    --header-h : 100px;
+}
+@media screen and (max-width:768px){
+    :root {
+        --font-size--basic : 16px;
+        --font-size--title : 24px;
+        --font-size--title2 : 18px;
+        --header-h : 56px;
+    }
+}
+
 body {
-    font-family: "Pretendard", sans-serif;
-    font-size: 17px;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #363636;
+    font-family: "Suit", sans-serif;
+    font-size: var(--font-size--basic);
+    font-weight: var(--font-weight-basic);
+    line-height: var(--line-height-basic);
+    color: var(--color-basic);
     word-break: keep-all; /* 단어별로 줄바꿈 */
     word-wrap: break-word;
     /* 단어가 너무 길었을때 강제줄바꿈 */
@@ -27,6 +53,17 @@ body {
     height: 1px;
     margin: -1px;
     overflow: hidden;
+}
+/* 
+    좌우여백 50px : 1260 + 50 + 50 = 1360
+    좌우여백 30px : 1260 + 30 + 30 = 1320
+    좌우여백 5% : 1260 + (1260*0.05=63) + (1260*0.05=63) = 1335.6
+*/
+@media screen and (max-width:1320px){
+    .wrapper {
+        width: auto;
+        margin: 0 30px;
+    }
 }
 
 @media screen and (max-width:768px){
