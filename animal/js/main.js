@@ -1,79 +1,108 @@
 $(document).ready(function(){
-    const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
-        autoplay: {  /* 팝업 자동 실행 */
-            delay: 3000,
-            disableOnInteraction: true,
-        },
+    /************************ 시작 :: 지금 pc버전이지 모바일인지 체크 (메뉴상태)  ***************/
 
-        effect: "fade", /* fade 효과 */
-        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
-        pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
-            el: '.visual .paging', /* 해당 요소의 class명 */
-            clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
-        },
-        navigation: {  /* 이전, 다음 버튼 */
-            nextEl: '.visual .btn_next',  /* 다음 버튼의 클래스명 */
-            prevEl: '.visual .btn_prev',  
-        },
-    });//swiper 종료
-    
-    
-    $('.visual .ctrl_btn .btn_stop').on('click', function(){
-        visual_swiper.autoplay.stop();  /* 일시정지 기능 */
-        $(this).hide()
-        $('.visual .ctrl_btn .btn_play').show()
-        //console.log('정지버튼')
-    })//종료
-    $('.visual .ctrl_btn .btn_play').on('click', function(){
-        //console.log('재생버튼')
-        visual_swiper.autoplay.start();  /* 재생 기능 */
-        $(this).hide()
-        $('.visual .ctrl_btn .btn_stop').show()
-    })//재생
+    let mobile_size = 1024
+    let window_w 
+    let device_status // pc, mobile 
 
-
-    /*
-        브라우저가 스크롤 되면 header에 fixed 클래스 추가
-        1. 조금이라도 스크롤 되면 header fixed 클래스 추가
-        2. 다시 맨위로 올라가면 header에 fixed 클래스를 삭제
-        3. 새로고침했을때 만약 브라우저가 스크롤이 되어 있다면 header에 fixed 클래스를 줘
-
-        ---> 브라우저를 스크롤 할때도 체크해야하고
-             처음에 로딩했을때도 체크해야함
-        ====> 동일한 체크를 두번 실행 ==> 함수로 처리
-    */
-    let scrolling
-    function scroll_chk(){ //함수를 정의한다
-        scrolling = $(window).scrollTop()
-        console.log(scrolling)
-        if(scrolling > 0){
-            $('header').addClass('fixed')
+    function device_chk(){ //함수를 정의한다 (선언)
+        window_w = $(window).width()
+        if(window_w > mobile_size){ //브라우저 넓이가 1024보다 클때
+            device_status = 'pc'
         }else{
-            $('header').removeClass('fixed')
+            device_status = 'mobile'
         }
+        console.log(device_status)
     }
-    //문서가 로딩 되었을때 단 1번 함수 실행
-    scroll_chk()
-    //브라우저가 스크롤 될때마다 1번씩 함수 실행
-    $(window).scroll(function(){ 
-        scroll_chk()
+
+    device_chk() //html의 로딩이 완료된 이후 단 1번 실행
+    $(window).resize(function(){ //브라우저가 리사이즈 될때마다 실행
+        device_chk() 
     })
 
-    //book swiper 
-    const book_swiper = new Swiper('.book .swiper', { /* 팝업을 감싼는 요소의 class명 */
-        slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
-        breakpoints: {
-            769: {    /* 640px 이상일때 적용 */
-                slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
-                spaceBetween: 24,
-            },
+    /************************ 시작 :: 지금 pc버전이지 모바일인지 체크 (메뉴상태)  ***************/
+    
+    /************************ 시작 :: visual swiper  ***************/
+    let visual_time = 5000
+    const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        autoplay: {  /* 팝업 자동 실행 */
+            delay: visual_time,
+            disableOnInteraction: true,
         },
-        navigation: {
-            nextEl: '.book .btn_next',
-            prevEl: '.book .btn_prev',
-        },
-    });//swiper 종료
+        //effect: "fade", /* fade 효과 */
+        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+    });
+    
+    
+    $('.visual .ctrl_btn .stop').on('click', function(){
+        visual_swiper.autoplay.stop();  /* 일시정지 기능 */
+        $(this).hide()
+        $('.visual .ctrl_btn .play').css('display', 'flex')
+        $('.visual .ctrl_btn .paging .bar span').stop() //animate 종료
+    })
+    $('.visual .ctrl_btn .play').on('click', function(){
+        visual_swiper.autoplay.start();  /* 재생 기능 */
+        $(this).hide()
+        $('.visual .ctrl_btn .stop').css('display', 'flex')
+        updateCurrent()
+    })
+
+    // 전체 슬라이드 개수 (loop 상태에서도 실제 슬라이드 개수만)
+    const totalSlides = $('.visual .swiper .swiper-slide').not('.swiper-slide-duplicate').length;
+    $('.visual .paging .total').text(totalSlides); // 총 개수 표시
+
+    // 현재 슬라이드 번호 표시 함수
+    function updateCurrent() {
+        let realIndex = visual_swiper.realIndex + 1; // 실제 인덱스 (0부터 시작하므로 +1)
+        $('.visual .paging .current').text(realIndex);
+        //슬라이드가 교체되면 제일 먼저 넓이를 0으로 초기화 
+        $('.visual .ctrl_btn .paging .bar span').stop() //animate 종료
+        $('.visual .ctrl_btn .paging .bar span').width(0)
+        $('.visual .ctrl_btn .paging .bar span').animate({
+            width : '100%'
+        }, visual_time)
+    }
+
+    // 처음 로드 시 한번 실행
+    updateCurrent();
+
+    // 슬라이드 변경될 때마다 실행
+    visual_swiper.on('slideChange', function () {
+        updateCurrent();
+    });
+    /************************ 끝 :: visual swiper ***************/
+
+
+    /************************ 시작 : pc버전 메뉴 오버 **************
+     * 메뉴에 마우스를 오버했을때  (header .gnb)
+     * header에 menu_pc 클래스를 추가
+     * 마우스를 오버한 메뉴의 1차 메뉴 li에 over를 클래스 추가 (header .gnb .gnb_wrap ul.depth1 > li)
+     * --> 오버한 li에만 over 클래스 줌
+     * ===> 모든 li에서 over를 빼고 오버한 li에만 over클래스 줌
+     * pc버전에서만 .... 
+     * 메뉴를 오버해서 바뀐 색상의 영역 내부에서는 오버가 유지되고 그 밖에 나갈때 아웃
+    */
+
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
+        if(device_status == 'pc'){ //pc일때만 동작
+            // console.log('오버했음')
+            $('header').addClass('menu_pc')
+            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+            $(this).addClass('over')
+        }
+    })
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
+        $(this).removeClass('over')
+    })
+    $('header').on('mouseleave', function(){
+        $(this).removeClass('menu_pc')
+    })
+
+    $('header .util .search .sch_open').on('focusin', function(){
+        $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+    })
+
+    /************************ 끝 : pc버전 메뉴 오버 ***************/
 
 })//맨끝
