@@ -256,6 +256,18 @@ header.fixed .logo a {
 .visual {
     position: relative; /* ctrl_btn 정렬의 기준 */
 }
+.visual .spin {
+    position: absolute;
+    right: 3%;
+    bottom: 3%;
+    z-index: 10;
+    animation: spin 5s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% {transform: rotate(-360deg)}
+}
+
 .visual .swiper-slide {
     height: 100dvh; /* 브라우저 높이와 동일 */
     background-position: center center;
@@ -570,8 +582,16 @@ header.fixed .logo a {
 }/*@media*/
 
 .slogan {
+    position: relative;
+    background-color: #fff;
     margin: clamp(98px, 16vw, 210px) 0 clamp(113px, 11vw, 142px) 0;
     text-align: center;
+}
+.slogan .spin {
+    position: absolute;
+    left: 10px;
+    top: -280px;
+    mix-blend-mode: difference;
 }
 .slogan h2 {
     font-size: clamp(28px, 5vw, 60px);
