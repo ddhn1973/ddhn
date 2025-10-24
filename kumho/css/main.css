@@ -15,9 +15,6 @@
 .visual {
     position: relative; /* scroll의 기준 */
 }
-.visual .popup {
-    height: 100dvh;
-}
 .visual .popup .slide {
     height: 100dvh;
     position: relative;
@@ -30,6 +27,7 @@
     position: absolute;
     left: 0;
     top: 0;
+    z-index: -1;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -38,15 +36,14 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: 1s;
-    transition-delay: 0.3s;
+    object-position: center center; /* 기본값: 중앙 */
+    transform: scale3d(1.2, 1.2, 1);
+    transition: transform 2s;
 }
 .visual .popup .slide.slick-active .photo img {
-    transform: scale3d(1.2, 1.2, 1);
+    transform: scale3d(1, 1, 1);
 }
 .visual .popup .slide .txt {
-    position: relative; /* z-index 의 필수값 */
-    z-index: 10;
     color: #fff;
     margin-bottom: 250px;
 }
@@ -64,7 +61,7 @@
 .visual .popup .slide .txt .line span {
     transform: translateY(100%);
     display: block;
-    transition: transform 1s;
+    transition: transform 0.5s;
     transition-delay: 0.3s;
 }
 .visual .popup .slide.slick-active .txt .line span { /* 현재 보이는 팝업일때 */
@@ -105,19 +102,45 @@
     50% { right: -30px; }
     100% { right: -15px; }
 }
-
+@media screen and (max-width:1024px){
+    .visual .popup .slide .txt h2 {
+        font-size: 4.4rem;
+    }
+}
 @media screen and (max-width:768px){
-.visual .popup .slide {
-    height: 600px;
-}
-.visual .popup .slide .txt {
-    margin-bottom: 80px;
-}
-.visual .popup .slide .txt h2 {
-    font-size: 3.2rem;
-    margin: 0 0 13px 0;
-}
-.visual .scroll {
-    display: none;
-}    
+    .visual .popup .slide {
+        height: 600px;
+    }
+    .visual .popup .slide .photo img {
+        object-position: 75% center; /* 왼쪽 기준으로 살짝 이동 (필요에 따라 값 조정) */
+    }
+    .visual .popup .slide .txt {
+        margin-bottom: 56px;
+    }
+    .visual .popup .slide .txt h2 {
+        font-size: 3.2rem;
+        margin: 0 0 24px 0;
+    }
+    .visual .popup .slide .txt h2,
+    .visual .popup .slide .txt p {
+        transform: translateY(50%);
+        opacity: 0;
+        transition: transform 1s, opacity 1s;
+        transition-delay: 0.3s;
+    }
+    .visual .popup .slide.slick-active .txt h2,
+    .visual .popup .slide.slick-active .txt p {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    .visual .popup .slide .txt h2 .line {
+        display: block; /* 줄바꿈 */
+    }
+    .visual .scroll {
+        display: none;
+    }
+}/*@media*/
+
+footer {
+margin: 500px 0 0 0;
 }
