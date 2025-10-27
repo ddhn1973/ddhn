@@ -6,6 +6,11 @@
     --header-h : 90px;
     --wrapper-margin : 30px;
 }
+@media screen and (max-width:1024px){
+    :root {
+        --header-h : 70px;
+    }
+}
 @media screen and (max-width:768px){
     :root {
         --header-h : 56px;
@@ -77,3 +82,8 @@ body {
         display: none;
     }
 }
+
+/* ::selection {
+    background-color: var(--color-main);
+    color: #fff;
+} */
