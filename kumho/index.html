@@ -7,6 +7,8 @@
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/slick.min.js"></script>
     <link rel="stylesheet" href="css/slick.css">
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
      <!-- 내가 작성한 파일(나중에 호출해야함) -->
     <script src="js/common.js"></script>
     <script src="js/main.js"></script>
@@ -137,9 +139,145 @@
                 </div>
                 <div class="scroll">Scroll Down</div>
             </section> <!-- visual -->
-            <section class="biz"></section> <!-- biz -->
-            <section class="news"></section> <!-- news -->
-            <section class="service"></section> <!-- service -->
+            <section class="biz">
+                <div class="tit">
+                    <div class="wrapper">
+                        <strong>건설을 넘어 세상을 연결하는 힘</strong>
+                        <h2>Beyond Structures</h2>
+                    </div>
+                </div><!--tit-->
+                <!-- 마우스를 li에 오버하면 오버한 li에는 active 클래스 추가
+                     li르르 감싸고 있는 요소(.list)에도 class(over) 추가 -->
+                <div class="list ">
+                    <ul>
+                        <li class="biz01">
+                            <div class="txt">
+                                <strong>건축사업</strong>
+                                <h3>Architectural <br> construction</h3>
+                                <p>빌딩 개발에서 도시개발로 이어지는 <br> 금호건설의 건축사업</p>
+                                <a href="#n"><span>MORE</span></a>
+                            </div>
+                        </li>
+                        <li class="biz02 ">
+                            <div class="txt">
+                                <strong>토목사업</strong>
+                                <h3>Civil <br> engineering</h3>
+                                <p>도시와 국토를 잇는 공간 예술, <br> 금호건설의 토목사업</p>
+                                <a href="#n"><span>MORE</span></a>
+                            </div>
+                        </li>
+                        <li class="biz03">
+                            <div class="txt">
+                                <strong>주택사업</strong>
+                                <h3>Housing <br> construction</h3>
+                                <p>전국 곳곳에서 신주거단지 조성으로 <br> 고객의 높은 신뢰를 얻어온 금호</p>
+                                <a href="#n"><span>MORE</span></a>
+                            </div>
+                        </li>
+                        <li class="biz04">
+                            <div class="txt">
+                                <strong>플랜트/환경사업</strong>
+                                <h3>Plant <br> Environment</h3>
+                                <p>산업발전의 기틀을 다지는 환경경영을 <br> 실천하는 환경/플랜트산업</p>
+                                <a href="#n"><span>MORE</span></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div><!--list-->
+            </section><!--biz-->
+            <section class="news">
+                <div class="wrapper">
+                    <div class="tit">
+                        <strong>언론 속 금호건설 이야기</strong>
+                        <h2>In the News</h2>
+                    </div><!-- tit -->
+                    <div class="list">
+                        <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                            <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <span class="date">2025.09.01</span>
+                                        <h2>금호건설, 3개 분기 연속 흑자…공공주택 수주 성과에 하반기도 청신호</h2>
+                                        <p>건설업 불황 속에서도 금호건설(002990)이 지난해 말부터 개선된 실적을 기록하며 본격적인 성장 궤도에 올랐다. 지난해에 선보인 신규 주거브랜드 ‘아테라(ARTERA)’의 인지도 상승을 기반으로 주택 부문에서 안정적인 수익을 확보하고 있는데다 건축 부문은 원가율 개선, 토목 부문은 실적 회복세를 이어가며 전 사업 부문에서 고른 성과를 거두고 있기 때문이다. 여기에 정부의 공공주택 공급 확대 정책에 발맞춰 대규모 민간참여 공공주택사업을 잇달아 수주하면서 향후 실적 개선세도 더욱 뚜렷해질 것으로 전망된다.</p>
+                                        <div class="photo"><img src="image/main/news1.jpg" alt=""></div>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <span class="date">2025.09.01</span>
+                                        <h2>금호건설, '금호영아티스트'와 협업…아테라 단지에 '예술' 더해</h2>
+                                        <p>금호건설은 금호미술관이 발굴한 '금호영아티스트'와 협업해 '아트 인 리빙'(ART in Living)을 전국 아테라 단지에 선택적으로 적용해 나갈 계획이라고 1일 밝혔다. 아트 인 리빙으로 금호영아티스트 출신 작가들이 아테라 단지에 예술적 감각을 최대한 끌어올려 단순 주거 공간을 넘어 예술이 묻어나는 공간으로 탈바꿈시켜 나간다는 계획이다.</p>
+                                        <div class="photo"><img src="image/main/news2.jpg" alt=""></div>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <span class="date">2025.07.20</span>
+                                        <h2>금호건설, '의왕군포안산지구' 7247억 규모 공공주택 수주</h2>
+                                        <p>서울=뉴스1 윤주현 기자 = 금호건설(002990)은 올해 3기 신도시 민간참여 공공주택사업 3건의 우선협상대상자로 선정됐다고 16일 밝혔다.
+
+                                            우선협상대상지는 △의왕군포안산지구(7247억 원) △남양주 왕숙지구(5986억 원) △하남 교산지구(2570억 원)이다. 사업비는 총 1조 6000억 원이다. 지난해 말 선정된 광명 학온지구(3148억 원) 사업까지 포함하면 1조 9000억 원 규모다.</p>
+                                        <div class="photo"><img src="image/main/news3.jpg" alt=""></div>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <span class="date">2025.07.20</span>
+                                        <h2>금호건설, '의왕군포안산지구' 7247억 규모 공공주택 수주</h2>
+                                        <p>서울=뉴스1 윤주현 기자 = 금호건설(002990)은 올해 3기 신도시 민간참여 공공주택사업 3건의 우선협상대상자로 선정됐다고 16일 밝혔다.
+
+                                            우선협상대상지는 △의왕군포안산지구(7247억 원) △남양주 왕숙지구(5986억 원) △하남 교산지구(2570억 원)이다. 사업비는 총 1조 6000억 원이다. 지난해 말 선정된 광명 학온지구(3148억 원) 사업까지 포함하면 1조 9000억 원 규모다.</p>
+                                        <div class="photo"><img src="image/main/news4.jpg" alt=""></div>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                            </ul>
+                        </div>
+                    </div><!--list-->
+                    <div class="ctrl_wrap">
+                        <div class="scrollbar"></div>
+                        <!-- <div class="btn_prev"><span>이전팝업보기</span></div>
+                        <div class="btn_next"><span>다음팝업보기</span></div> -->
+                        <div class="more"><a href="#n"><span>MORE</span></a></div>
+                    </div>
+                </div>
+            </section> <!-- news -->
+            <section class="service">
+                <div class="tit">
+                    <div class="wrapper">
+                        <strong>Kumho service</strong>
+                        <h2>금호서비스</h2>
+                    </div>
+                </div>
+                <h2></h2>
+                <div class="list" data-bg="">
+                    <ul>
+                        <li data-bg="service01">
+                            <a href="#n">
+                                <strong>Kumho TV</strong>
+                                <h3>금호건설의 이야기를 <br>
+                                    영상으로 만나세요</h3>
+                                <div class="more"><span>MORE</span></div>
+                            </a>
+                        </li>
+                        <li data-bg="service02">
+                            <a href="#n">
+                                <strong>Atera</strong>
+                                <h3>혁신과 가치를 아테라에서 <br>
+                                    경험하세요</h3>
+                                <div class="more"><span>MORE</span></div>
+                            </a>
+                        </li>
+                        <li data-bg="service03">
+                            <a href="#n">
+                                <strong>Join Us</strong>
+                                <h3>금호건설과 함께 미래를 <br>
+                                    만들어가세요</h3>
+                                <div class="more"><span>MORE</span></div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section> <!-- service -->
         </div>
         <footer></footer>
     </div>
