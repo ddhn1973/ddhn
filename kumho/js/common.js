@@ -89,6 +89,28 @@ $(document).ready(function(){
     $(window).scroll(function(){
         scroll_chk()
     })
+
+
+// footer .f_util .family_site .family_open
+// footer .f_util .family_site .family_close
+    $('footer .f_util .family_site .family_open').on('click', function(){
+        $('footer .f_util .family_site').addClass('open')
+        $('footer .f_util .family_site .family_wrap').slideDown()
+    })
+    $('footer .f_util .family_site .family_close').on('click', function(){
+        $('footer .f_util .family_site').removeClass('open')
+        $('footer .f_util .family_site .family_wrap').slideUp()
+    })
+
+
+
+    // ToP
+    $('footer .f_util .top').on('click', function(){
+        $('html, body').animate({
+            scrollTop : 0
+        }, 500)
+    })
+
 })//맨끝
 
 
