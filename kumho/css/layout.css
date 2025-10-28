@@ -314,3 +314,52 @@ header .up:not(.menu_pc, .menu_mo) {
         display: block;
     }
 }
+
+
+footer {
+    background-color: var(--color-title);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 100px 0 100px 0;
+}
+footer .wrapper {
+    display: flex;
+    position: relative;
+    gap: 0 120px;
+}
+footer .f_logo {
+    width: 109px;
+    height: 36px;
+    background: url(../image/common/logo_w.svg) no-repeat center center / cover;
+}
+footer .f_util {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    gap: 0 6px;
+}
+footer .f_util .family_site {
+    width: 186px;
+    /* 관련사이트는 여는버튼, 바로가기 사이트 등의 넓이가 같음
+    그래서 감싸고 있는 family_site에 넓이를 주고 내부요소는 그에 100%를 꽉차게 줌*/
+}
+footer .f_util .family_site .open {
+    display: block;
+    height: 43px;
+    line-height: 43px;
+    text-align: left;
+    padding-left: 19px;
+    background-color: #3d3d3d;
+}
+footer .f_util .family_site .family_wrap {
+    display: none
+}
+footer .f_util .family_site .close {
+    display: none;
+}
+footer .f_util .top {
+    height: 43px;
+    line-height: 43px;
+    padding: 0 16px 0 16px;
+    background-color: var(--color-main);
+}
