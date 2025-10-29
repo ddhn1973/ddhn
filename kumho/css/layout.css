@@ -314,7 +314,14 @@ header .up:not(.menu_pc, .menu_mo) {
         display: block;
     }
 }
-
+/* 서브에서 이미 선택되어있는 메뉴 디자인하기 */
+header.fixed .gnb .gnb_wrap ul.depth1 > li:has(.active) > ul.depth2 > li.active > a {
+    color: var(--color-main);
+}
+header.fixed .gnb .gnb_wrap ul.depth1 > li:has(.active) > a {
+    color: var(--color-main);
+}
+/* 서브에서 이미 선택되어있는 메뉴 디자인하기 */
 
 footer {
     background-color: var(--color-title);
