@@ -12,3 +12,151 @@
 @import url(common.css);
 @import url(layout.css);
 @import url(contents.css);
+
+.sub_visual {
+    height: 400px;
+    background: url(../image/sub/sub_visual01.jpg) no-repeat center center / cover;
+    color: #fff;
+    display: flex; /* wrapper를 sub_visual 아래로 정렬 */
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.sub_visual .breadcrumb ol {
+    display: flex;
+    justify-content: center;
+    gap: 0 30px;
+    align-items: center;
+}
+.sub_visual .breadcrumb ol li {
+    position: relative;
+    line-height: 1.5em;
+}
+.sub_visual .breadcrumb ol li::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 6px;
+    height: 6px;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 1px 1px 0 0;
+}
+.sub_visual .breadcrumb ol li:last-child::after {
+    display: none;
+}
+.sub_visual .breadcrumb ol li.home a {
+    margin-bottom: 2px;
+    display: block;
+    width: 13px;
+    height: 15px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 19 19' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_161_19' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='19' height='19'%3E%3Crect width='19' height='19' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_161_19)'%3E%3Cpath d='M4.74984 15.0417H7.12484V10.2917H11.8748V15.0417H14.2498V7.91667L9.49984 4.35417L4.74984 7.91667V15.0417ZM3.1665 16.625V7.125L9.49984 2.375L15.8332 7.125V16.625H10.2915V11.875H8.70817V16.625H3.1665Z' /%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.sub_visual .sub_tit {
+    margin: 8px 0 20px 0;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.5;
+    text-align: center;
+}
+.sub ul {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    max-width: 1260px;
+    margin: 0 0 56px 0;
+}
+.sub ul li a {
+    display: block;
+    line-height: 30px;
+    padding: 16px 10px 16px 10px;
+}
+.sub ul li.active a span {
+    position: relative;
+    font-weight: 800;
+}
+.sub ul li.active a span::after {
+    content: "";
+    position: absolute;
+    right: -7px;
+    top: -2px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.contents {
+    min-height: 300px;
+}
+.contents .page_tit {
+    margin: 180px 0 80px 0;
+}
+.contents .page_tit h2 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.5;
+    color: var(--color-title);
+    text-align: center;
+}
+
+@media screen and (max-width:768px) {
+    .sub_visual .sub {
+        margin-left: var(--wrapper-margin-m);
+        width: calc(100% + var(--wrapper-margin) + var(--wrapper-margin));
+    }
+    .sub_visual {
+        height: 380px;
+    }
+    .sub_visual .sub_tit {
+        margin: 8px 0 20px 0;
+        font-size: 24px;
+    }
+    .sub {
+        height: 61px;
+    }
+    .sub ul {
+        display: flex;
+        justify-content: flex-start;
+        border-radius: 0;
+        overflow-y: hidden;/* 위아래 스크롤 바는 숨김 */
+        overflow-x: auto; /* 좌우 스크롤바 생성 */
+        scrollbar-width: none;
+    }
+    .sub ul::-webkit-scrollbar {
+        display: none;
+    }
+    .sub ul li a {
+        display: block;
+        line-height: 30px;
+        padding: 16px 20px 16px 20px;
+    }
+    .sub ul li.active a span {
+        position: relative;
+        font-weight: 800;
+    }
+    .sub ul li.active a span::after {
+        content: "";
+        position: absolute;
+        right: -7px;
+        top: -2px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: #fff;
+    }
+    .contents {
+        min-height: 300px;
+    }
+    .contents .page_tit {
+        margin: 120px 0 16px 0;
+    }
+    .contents .page_tit h2 {
+        font-size: 20px;
+        text-align: left;
+    }
+}
