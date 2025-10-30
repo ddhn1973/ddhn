@@ -31,6 +31,10 @@ $(document).ready(function(){
     })
 
 
+    // 2차메뉴에 active 클래스를 가지고 있다면 감싸고 있는 1차 메뉴 li에 open 클래스를 추가
+    // 문서가 로딩되었을때 단 1번만
+
+
     let gnb_open
     $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
 		if(device_status == 'mobile'){
