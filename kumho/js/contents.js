@@ -83,8 +83,44 @@ $(document).ready(function(){
         ceo_ani() //브라우저가 로딩되었을때 단 한번
     }
     $(window).scroll(function(){
-        if(ceo_length > 0){
-            ceo_ani() //브라우저가 스크롤 될때마다 한번씩
-        }   
-    })
+    
+    
+    const snbScroll = function() {
+        const $menu_wrap = $(".snb ul");  /* 선택자를 잘 입력해야함 */
+        const $menu_li = $(".snb ul li");  
+        function scrollToElement($element) {
+            const containerWidth = $menu_wrap.width();
+            const itemWidth = $element.outerWidth(true);
+            const totalItemsWidth = $menu_wrap[0].scrollWidth;
+            const newScrollPosition = ($element.index() === 0) ? 0 :
+                ($element.index() === $menu_li.length - 1) ? totalItemsWidth - containerWidth :
+                $element.position().left + $menu_wrap.scrollLeft() - (containerWidth - itemWidth) / 2;
+            $menu_wrap.animate({
+                scrollLeft: newScrollPosition
+            }, 500);
+        }
+        const $activeItem = $menu_wrap.find(".active");
+        if ($activeItem.length) {
+            scrollToElement($activeItem);
+        }
+    } 
+    snbScroll();   /* 함수의 실행 */
+
+    /* 컨텐츠가 브라우저 아래에서 위로 올라오는 위치
+    스크롤값 + 브라우저의 높이 == 콘텐츠의 offset().top 값과 같음
+    else if(scrolling >) */
+    if(ceo_length > 0){
+        ceo_ani() //브라우저가 스크롤 될때마다 한번씩
+    }
+})
+let history_lenght = $('ctn_history').length
+
+$(window).resize(function(){
+    if(history_lenght > 0)
+        his_head
+})
+
+    /* .ctn_history .his_head가 여러개...(4개)
+        4개 각각의 애니메이션 시작 시기와 종료시기를 계산해야함
+     */
 })
