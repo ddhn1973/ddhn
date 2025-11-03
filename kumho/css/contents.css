@@ -215,7 +215,6 @@
     width: 2px;
     height: 100%;
 }
-.ctn_history .his_cont .his_year .year_list:last-child::after {}
 .ctn_history .his_cont.tit_right .his_year {
     padding-left: 0;
     padding-right: 37px;
@@ -388,4 +387,319 @@
 .ctn_history .his_bar ul {
     display: flex;
     gap: 0 5px;
+}
+
+
+
+/************** 회사소개 > 찾아오시는길 **************/
+
+.ctn_map {
+    margin: 0 0 100px 0;
+}
+.ctn_map .map_area {
+    height: 550px;
+}
+.ctn_map .map_area iframe {
+    border: 0;
+    width: 100%;
+    height: 100%;
+}
+.ctn_map .map_info {
+    margin-top: -139px;
+    position: relative; /* z-index의 필수값 */
+    z-index: 10;
+}
+.ctn_map .map_info .info_wrap {
+    background-color: var(--color-main);
+    color: #fff;
+    padding: 64px 56px 64px 56px;
+}
+.ctn_map .map_info .info_wrap h3 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.5;
+    margin: 0 0 32px 0;
+}
+.ctn_map .map_info .info_wrap .group {
+    display: flex;
+    gap: 0 32px;
+}
+.ctn_map .map_info .info_wrap .group .item {
+    position: relative;
+    padding: 0 0 0 74px;
+}
+.ctn_map .map_info .info_wrap .group .item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 36px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.ctn_map .map_info .info_wrap .group .item.add::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 36 36' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_263_240' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='36' height='36'%3E%3Crect width='36' height='36' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_263_240)'%3E%3Cpath d='M18 34.5C14.275 34.5 11.0938 33.9688 8.45625 32.9062C5.81875 31.8437 4.5 30.375 4.5 28.5C4.5 27.7 4.75 26.9813 5.25 26.3438C5.75 25.7062 6.45 25.1375 7.35 24.6375L9.7875 26.8125C9.1875 27.0125 8.65625 27.2688 8.19375 27.5813C7.73125 27.8938 7.5 28.2 7.5 28.5C7.5 29.15 8.5125 29.8125 10.5375 30.4875C12.5625 31.1625 15.05 31.5 18 31.5C20.95 31.5 23.4375 31.1625 25.4625 30.4875C27.4875 29.8125 28.5 29.15 28.5 28.5C28.5 28.2 28.2688 27.8938 27.8063 27.5813C27.3438 27.2688 26.8125 27.0125 26.2125 26.8125L28.65 24.6375C29.55 25.1375 30.25 25.7062 30.75 26.3438C31.25 26.9813 31.5 27.7 31.5 28.5C31.5 30.375 30.1813 31.8437 27.5438 32.9062C24.9063 33.9688 21.725 34.5 18 34.5ZM18 28.5C17.45 28.5 16.9188 28.4062 16.4062 28.2188C15.8937 28.0312 15.425 27.75 15 27.375L5.55 19.0125C5.225 18.7375 4.96875 18.4 4.78125 18C4.59375 17.6 4.5 17.1875 4.5 16.7625V13.7625C4.5 13.3375 4.58125 12.925 4.74375 12.525C4.90625 12.125 5.15 11.7875 5.475 11.5125L14.925 2.7C15.35 2.3 15.825 2 16.35 1.8C16.875 1.6 17.425 1.5 18 1.5C18.575 1.5 19.125 1.6 19.65 1.8C20.175 2 20.65 2.3 21.075 2.7L30.525 11.5125C30.85 11.7875 31.0937 12.125 31.2562 12.525C31.4187 12.925 31.5 13.3375 31.5 13.7625V16.7625C31.5 17.1875 31.4062 17.6 31.2188 18C31.0312 18.4 30.775 18.7375 30.45 19.0125L21 27.375C20.575 27.75 20.1063 28.0312 19.5938 28.2188C19.0812 28.4062 18.55 28.5 18 28.5ZM17.85 21.45C18.2 21.45 18.5313 21.3938 18.8438 21.2812C19.1562 21.1687 19.45 20.9875 19.725 20.7375L28.05 13.35L19.05 4.875C18.875 4.75 18.7 4.65625 18.525 4.59375C18.35 4.53125 18.1625 4.5 17.9625 4.5C17.7625 4.5 17.575 4.53125 17.4 4.59375C17.225 4.65625 17.075 4.75 16.95 4.875L7.8 13.5L15.975 20.7375C16.25 20.9875 16.5438 21.1687 16.8563 21.2812C17.1688 21.3938 17.5 21.45 17.85 21.45ZM13.5 15.375C14.025 15.375 14.4688 15.1937 14.8313 14.8312C15.1938 14.4687 15.375 14.025 15.375 13.5C15.375 12.975 15.1938 12.5313 14.8313 12.1688C14.4688 11.8063 14.025 11.625 13.5 11.625C12.975 11.625 12.5313 11.8063 12.1688 12.1688C11.8063 12.5313 11.625 12.975 11.625 13.5C11.625 14.025 11.8063 14.4687 12.1688 14.8312C12.5313 15.1937 12.975 15.375 13.5 15.375ZM15.375 17.4C16.45 17.925 17.5812 18.0938 18.7687 17.9062C19.9562 17.7188 21 17.225 21.9 16.425C22.75 15.7 23.3063 14.7875 23.5688 13.6875C23.8313 12.5875 23.7 11.55 23.175 10.575L15.375 17.4ZM18 10.875C18.525 10.875 18.9687 10.6938 19.3312 10.3313C19.6937 9.96875 19.875 9.525 19.875 9C19.875 8.475 19.6937 8.03125 19.3312 7.66875C18.9687 7.30625 18.525 7.125 18 7.125C17.475 7.125 17.0313 7.30625 16.6688 7.66875C16.3063 8.03125 16.125 8.475 16.125 9C16.125 9.525 16.3063 9.96875 16.6688 10.3313C17.0313 10.6938 17.475 10.875 18 10.875Z' /%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.ctn_map .map_info .info_wrap .group .item.tel::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 36 36' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_263_280' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='36' height='36'%3E%3Crect width='36' height='36' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_263_280)'%3E%3Cpath d='M29.925 31.5C26.8 31.5 23.7125 30.8188 20.6625 29.4563C17.6125 28.0938 14.8375 26.1625 12.3375 23.6625C9.8375 21.1625 7.90625 18.3875 6.54375 15.3375C5.18125 12.2875 4.5 9.2 4.5 6.075C4.5 5.625 4.65 5.25 4.95 4.95C5.25 4.65 5.625 4.5 6.075 4.5H12.15C12.5 4.5 12.8125 4.61875 13.0875 4.85625C13.3625 5.09375 13.525 5.375 13.575 5.7L14.55 10.95C14.6 11.35 14.5875 11.6875 14.5125 11.9625C14.4375 12.2375 14.3 12.475 14.1 12.675L10.4625 16.35C10.9625 17.275 11.5562 18.1688 12.2437 19.0312C12.9312 19.8937 13.6875 20.725 14.5125 21.525C15.2875 22.3 16.1 23.0188 16.95 23.6813C17.8 24.3438 18.7 24.95 19.65 25.5L23.175 21.975C23.4 21.75 23.6938 21.5813 24.0563 21.4688C24.4188 21.3562 24.775 21.325 25.125 21.375L30.3 22.425C30.65 22.525 30.9375 22.7063 31.1625 22.9688C31.3875 23.2312 31.5 23.525 31.5 23.85V29.925C31.5 30.375 31.35 30.75 31.05 31.05C30.75 31.35 30.375 31.5 29.925 31.5ZM9.0375 13.5L11.5125 11.025L10.875 7.5H7.5375C7.6625 8.525 7.8375 9.5375 8.0625 10.5375C8.2875 11.5375 8.6125 12.525 9.0375 13.5ZM22.4625 26.925C23.4375 27.35 24.4313 27.6875 25.4438 27.9375C26.4563 28.1875 27.475 28.35 28.5 28.425V25.125L24.975 24.4125L22.4625 26.925Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.ctn_map .map_info .info_wrap .group .item h4 {
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.5;
+}
+.ctn_map .map_info .info_wrap .group .item p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 32px;
+}
+
+@media screen and (max-width:1024px) {
+    .ctn_map .map_area {
+        height: 350px;
+    }
+    .ctn_map .map_info {
+        margin-top: -70px;
+    }
+    .ctn_map .map_info .info_wrap {
+        padding: 32px 28px 32px 28px;
+    }
+    .ctn_map .map_info .info_wrap h3 {
+        font-size: 24px;
+        margin: 0 0 25px 0;
+    }
+    .ctn_map .map_info .info_wrap .group {
+        flex-direction: column;
+        gap: 16px 0;
+    }
+    .ctn_map .map_info .info_wrap .group .item {
+        padding: 0 0 0 64px;
+    }
+    .ctn_map .map_info .info_wrap .group .item::before {
+        top: 3px;
+        width: 50px;
+        height: 50px;
+        background-size: 32px;
+    }
+    .ctn_map .map_info .info_wrap .group .item h4 {
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 1.5;
+    }
+    .ctn_map .map_info .info_wrap .group .item p {
+        font-size: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 32px;
+    }
+} /* @media */
+
+
+/************** 홍보센터 > 금호역사관 **************/
+.ctn_pr05 .search {
+    max-width: 946px;
+    margin: 0 auto; /* 좌우 auto는 가운데 정렬 */
+}
+.ctn_pr05 .search .sch_wrap {
+    border: 3px solid var(--color-main);
+    border-radius: 50px;
+    height: 85px;
+    padding: 0 32px 0 32px;
+    display: flex; /* 검색어입력 - 버튼 좌우 배치 */
+    justify-content: space-between;
+    align-items: center;
+}
+.ctn_pr05 .search .sch_wrap label {
+    display: none; /* 접근성 때문에 필수 입력 */
+}
+.ctn_pr05 .search .sch_wrap input[type="text"] {
+    font-size: 24px;
+    height: 48px;
+    width: calc(100% - 50px);
+    font-weight: 800;
+    color: var(--color-title);
+    border: 0;
+    outline: none; /* 글을 입력할때 검은 테두리 잡히는거 */
+}
+.ctn_pr05 .search .sch_wrap input[type="text"]::placeholder {
+    font-size: 24px;
+    font-weight: 400;
+    color: #767676;
+}
+.ctn_pr05 .search .sch_wrap input[type="submit"] {
+    width: 48px;
+    height: 48px;
+    background-color: yellow;
+    border: 0;
+    color: transparent; /* 글자투명 - font-size:0 하면 안됨 */
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 36px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 36 36' fill='%23990002' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_267_422' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='36' height='36'%3E%3Crect width='36' height='36' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_267_422)'%3E%3Cpath d='M29.4 31.5L19.95 22.05C19.2 22.65 18.3375 23.125 17.3625 23.475C16.3875 23.825 15.35 24 14.25 24C11.525 24 9.21875 23.0563 7.33125 21.1688C5.44375 19.2813 4.5 16.975 4.5 14.25C4.5 11.525 5.44375 9.21875 7.33125 7.33125C9.21875 5.44375 11.525 4.5 14.25 4.5C16.975 4.5 19.2813 5.44375 21.1688 7.33125C23.0563 9.21875 24 11.525 24 14.25C24 15.35 23.825 16.3875 23.475 17.3625C23.125 18.3375 22.65 19.2 22.05 19.95L31.5 29.4L29.4 31.5ZM14.25 21C16.125 21 17.7188 20.3438 19.0312 19.0312C20.3438 17.7188 21 16.125 21 14.25C21 12.375 20.3438 10.7812 19.0312 9.46875C17.7188 8.15625 16.125 7.5 14.25 7.5C12.375 7.5 10.7812 8.15625 9.46875 9.46875C8.15625 10.7812 7.5 12.375 7.5 14.25C7.5 16.125 8.15625 17.7188 9.46875 19.0312C10.7812 20.3438 12.375 21 14.25 21Z' /%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.ctn_pr05 .join {
+    margin: 0 0 100px 0;
+}
+.ctn_pr05 .join h3 {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.5;
+    color: var(--color-title);
+    margin: 180px 0 32px 0;
+}
+.ctn_pr05 .join .agree .agree_box {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #f7f7f7;
+    padding: 40px;
+    height: 392px;
+    overflow-y: auto;
+}
+.ctn_pr05 .join .agree .agree_box p {
+    white-space: pre-line;
+}
+
+.ctn_pr05 .join .agree .agree_box::-webkit-scrollbar {
+    width: 20px
+}
+
+.ctn_pr05 .join .agree .agree_box::-webkit-scrollbar-thumb {
+    height: 42px;
+    background: #999;
+    border-radius: 10px;
+    border: 6px solid #f7f7f7
+}
+
+.ctn_pr05 .join .agree .agree_box::-webkit-scrollbar-track {
+    border-radius: 0 6px 6px 0;
+    background-color: transparent
+}
+.ctn_pr05 .join .agree .agree_btn {
+    margin: 25px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 0 32px;
+}
+.ctn_pr05 .join .agree .agree_btn input[type="radio"] {
+    display: none; /* input은 스타일을 주기 힘듬 그래서 숨기고 대신 lable에 스타일을 줌 */
+}
+.ctn_pr05 .join .agree .agree_btn label {
+    padding: 0 0 0 28px; /* 앞에 체크가 들어갈만큼의 여백 */
+    position: relative;
+    cursor: pointer;
+}
+.ctn_pr05 .join .agree .agree_btn label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #666;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 8' fill='%23666666' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.49693 8L0 4.2079L0.874233 3.25988L3.49693 6.10395L9.12577 0L10 0.948025L3.49693 8Z' /%3E%3C/svg%3E%0A");
+}
+.ctn_pr05 .join .agree .agree_btn input[type="radio"]:checked + label {
+    color: var(--color-main);
+    font-weight: 800;
+}
+.ctn_pr05 .join .agree .agree_btn input[type="radio"]:checked + label::before {
+    border-color: var(--color-main);
+    background-color: var(--color-main);    
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 8' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.49693 8L0 4.2079L0.874233 3.25988L3.49693 6.10395L9.12577 0L10 0.948025L3.49693 8Z' /%3E%3C/svg%3E%0A");
+}
+.ctn_pr05 .join .join_info {
+    border-top: 2px solid #666;
+    border-bottom: 1px solid #666;
+    padding: 8px 0;
+}
+.ctn_pr05 .join .join_info .item {
+    display: flex;
+    justify-content: space-between;
+    margin: 16px 0;
+    /* align-items: center; */
+}
+.ctn_pr05 .join .join_info .item label {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--color-title);
+    padding: 10px 0 0 0;
+}
+.ctn_pr05 .join .join_info .item select,
+.ctn_pr05 .join .join_info .item input[type="text"],
+.ctn_pr05 .join .join_info .item textarea {
+    width: calc(100% - 167px);
+    height: 42px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    padding: 0 8px;
+    color: var(--color-title);
+    outline: 0;
+}
+.ctn_pr05 .join .join_info .item textarea {
+    height: 450px;
+    resize: none;
+    padding: 8px;
+}
+.ctn_pr05 .join .join_btn {
+    margin: 19px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 0 16px;
+}
+.ctn_pr05 .join .join_btn input,
+.ctn_pr05 .join .join_btn a,
+.ctn_pr05 .join .join_btn button {
+    display: block;
+    font-weight: 800;
+    color: #fff;
+    width: 107px;
+    height: 47px;
+    line-height: 47px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #666;
+    border: none;
+}
+.ctn_pr05 .join .join_btn input.ok,
+.ctn_pr05 .join .join_btn a.ok,
+.ctn_pr05 .join .join_btn button.ok {
+    background-color: var(--color-main);
+}
+@media screen and (max-width:768px) {
+    .ctn_pr05 .join .join_info .item {
+        flex-direction: column;
+    }
+    .ctn_pr05 .join .join_info .item select,
+.ctn_pr05 .join .join_info .item input[type="text"],
+.ctn_pr05 .join .join_info .item textarea {
+    width: 100%;
+}
+}
+/************************* IR > 재무정보 *************************/
+.ctn_ir03 {
+    padding: 0 0 100px 0;
+}
+.ctn_ir03 h3 {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--color-title);
+    margin: 50px 0 10px 0;
+}
+@media screen and (max-width:768px){
+    /* 모바일에서 몇칸 날리기 */
+    .ctn_ir03 .table_wrap.money table col:last-child,
+    .ctn_ir03 .table_wrap.money table th:last-child,
+    .ctn_ir03 .table_wrap.money table td:last-child {
+        display: none;
+    }
 }
