@@ -1,0 +1,97 @@
+/* 태그 스타일 초기화 */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: inherit;
+    font-size: inherit;
+    /* inherit - 브라우저가 주는 스타일을 무시하라 */
+}
+strong {
+    font-weight: inherit;
+}
+em, address {
+    font-style: normal; /* 기울임 취소 */
+}
+ol, ul, li {
+    list-style: none; /* 앞에 도형빼기 */
+}
+a {
+    color: inherit;
+    text-decoration: none; /* 밑줄 삭제 */
+}
+button {
+    border: none;
+    background-color: transparent; /* 투명 */
+    font-weight: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    line-height: inherit;
+    cursor: pointer; /* 오버 시 마우스 포인터를 손바닥으로 */
+}
+* {
+    /* *(와일드카드)는 모든 태그를 말함 */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* padding과 width/height를 같이주면 사이즈가 늘어나는 현상 막기 */
+}
+fieldset {
+    border: none;
+}
+legend {
+    display: none;
+}
+input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+input[type="submit"] {
+    cursor: pointer;
+}
+/* table 공통 스타일 */
+.table_wrap table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    /* 테이블에는 각 칸의 테두리를 th, td의 border로 줌
+    이때 각 칸과 칸 사이에여백 발생 그 여백을 없애고
+    칸과 칸사이에 선이 중첩되서 두배가 되는 현상도 막아줌
+    테이블만 가능한 설정 */
+    border-top: 2px solid var(--color-title);
+}
+.table_wrap table th,
+.table_wrap table td {
+    border: 1px solid #ccc;
+    padding: 8px 16px;
+}
+.table_wrap table th:first-child,
+.table_wrap table td:first-child {
+    border-left: 0;
+}
+.table_wrap table th:last-child,
+.table_wrap table td:last-child {
+    border-right: 0;
+}
+.table_wrap table thead th,
+.table_wrap table thead td {
+    background-color: #f7f7f7;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-title);
+    padding: 12px 5px 7px 5px;
+    text-align: center;
+}
+.table_wrap table tbody th {
+    background-color: #f7f7f7;
+    font-weight: 700;
+    color: var(--color-title);
+    text-align: left;
+    padding-left: 16px;
+}
+.table_wrap table tbody td {
+    text-align: right;
+    padding-right: 15px;
+}

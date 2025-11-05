@@ -1,0 +1,29 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+@import url(layout.css);
+
+h2 {
+    font-size: 40px;
+    color: #fff;
+
+}
+.visual {
+    background-color: blueviolet;
+    color: #fff;
+}
+.tree {
+    background-color: #fff;
+}
+.work {
+    background-color: red;
+    color: #fff;
+}
+.news {
+    background-color: #fff;
+    color: #fff;
+}
+footer {
+    background-color: var(--color-main);
+    color: #fff;
+}
