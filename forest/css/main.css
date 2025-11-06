@@ -2,27 +2,356 @@
 @import url(font.css);
 @import url(common.css);
 @import url(layout.css);
+#fp-nav.fp-left {
+    left: 50px;
+}
+#fp-nav {
+    position: fixed;
+    z-index: 100;
+    top: 50%;
+    opacity: 1;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translate3d(0, -50%, 0);
+    pointer-events: none;
+}
+#fp-nav ul li {
+    width: auto;
+    height: auto;
+    margin: 10px 0 10px 0;
+}
+#fp-nav ul li:last-child {
+    display: none; /* footer 툴팁 삭제 */
+}
+#fp-nav ul li a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* border: 1px solid red; */
+}
+#fp-nav ul li a span {
+    display: none;
+}
+/* 라이브러리를 쓸때 라이브러리에서 준 스타일과 내가 준 스타일이 충돌될때
+    내 스타일을 우선시하려면
+    1. important를 줘서 내꺼를 무조건 적용하게함.
+    2. 선택자를 조정*/
+body #fp-nav.hide {
+    display: none;
+}
+body #fp-nav ul li .fp-tooltip {
+    position: relative;
+    top: auto;
+    left: auto;
+    color: rgba(255,255,255,0.6);
+    font-size: inherit;
+    font-family: inherit;
+    max-width: 100%;
+    overflow: visible;
+    opacity: 1;
+    width: auto;
+    padding: 0 8px 0 25px;
+    line-height: 2;
+}
+body #fp-nav ul li .fp-tooltip.fp-left {
+    left: auto;
+}
+body #fp-nav ul li .fp-tooltip::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 13px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+/* #fp-nav ul, .fp-slidesNav ul {
+    margin: 0 0 0 50px;
+} */
+body #fp-nav ul li a.active + .fp-tooltip {
+    border: 1px solid rgba(255, 255, 255, 0.6);;
+    border-radius: 50px;
+}
+/* #fp-nav에 dark가 추가되었을때 */
 
-h2 {
-    font-size: 40px;
+.visual .swiper {
+    width: 100%;
+    height: 100%;
+}
+.visual .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.visual .swiper-slide .photo,
+.visual .swiper-slide .video {
+    position: absolute; /* swiper-slide를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.visual .swiper-slide .video video,
+.visual .swiper-slide .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.visual .swiper-slide .photo img {
+    transition: transform 0.5s;
+    transform: scale3d(1.2, 1.2, 1);
+}
+.visual .swiper-slide.swiper-slide-active .photo img {
+    transform: scale3d(1, 1, 1);
+}
+.visual .swiper-slide .txt {
     color: #fff;
+    text-align: center;
+    margin: calc(var(--header-h) + 20px) 0 20px 0;
+}
+.visual .swiper-slide .txt strong {
+    display: inline-block;
+    font-weight: 800;
+    transition-delay: 0.6s;
+}
+.visual .swiper-slide .txt h3 {
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1.5;
+    margin: 24px 0;
+    transition-delay: 0.6s;
+}
+.visual .swiper-slide .txt a {
+    display: inline-block;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    padding: 4px 16px;
+    transition-delay: 0.6s;
+}
+.visual .swiper-slide .txt strong,
+.visual .swiper-slide .txt h3,
+.visual .swiper-slide .txt a {
+    transition: transform 1s, opacity 1s;
+    opacity: 0;
+    transform: translateY(100px);
+}
+.visual .swiper-slide.swiper-slide-active .txt strong,
+.visual .swiper-slide.swiper-slide-active .txt h3,
+.visual .swiper-slide.swiper-slide-active .txt a {
+    transition: transform 1s, opacity 1s;
+    opacity: 1;
+    transform: translateY(0);
+}
+.visual .paging {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    transform: translate(-50%);
+    z-index: 10;
+    width: calc(100% - var(--wrapper-margin) - var(--wrapper-margin));
+    max-width: 1260px;
+}
+.visual .paging ul {
+    display: flex;
+    gap: 0 2px;
+}
+.visual .paging ul li.swiper-pagination-bullet {
+    margin: 0;
+    width: 25%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+    background: none;
+    opacity: 1;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 800;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+/* @keyframes paging {
+    0% { width: 0%; }
+    100% { width: 100%; }
+} */
+@media screen and (max-width:1280px) {
+    .visual .swiper-slide .txt h3 {
+        font-size: 40px;
+    }
+}
+@media screen and (max-width:768px) {
+    .visual .swiper-slide {
+        height: 600px;
+    }
+    .visual .swiper-slide .txt h3 {
+        font-size: 32px;
+        margin: 16px 0;
+    }
+    .visual .paging {
+        width: auto;
+        max-width: 100%;
+    }
+    .visual .paging ul {
+        gap: 0 4px;
+    }
+    .visual .paging ul li.swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+        display: block;
+        border-radius: 50%;
+        background: none;
+        opacity: 1;
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: 800;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+}
+
+
+.tree .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tree .tit h2 {
+    color: var(--color-main);
+    font-weight: 800;
+    line-height: 1;
+    display: flex;
+    align-items: flex-end;
+    gap: 0 5px;
+    margin: 0 0 16px 0;
+}
+.tree .tit strong {
+    font-size: 80px;
+}
+.tree .tit span {
+    margin-bottom: 2px;
+}
+
+
+.tree .photo {
+    position: relative;
+    padding: 0 60px 0 0;
+    width: 50%;
+    text-align: center;
+}
+.tree .photo .tree img {
+    width: 90%;
 
 }
-.visual {
-    background-color: blueviolet;
-    color: #fff;
+.tree .photo .cloud01 {
+    position: absolute;
+    left: -50px;
+    top: -18%;
+    width: 35%;
+    z-index: 1;
 }
-.tree {
-    background-color: #fff;
+.tree .photo .cloud02 {
+    position: absolute;
+    right: 17%;
+    top: 4%;
+    width: 18%;
+    z-index: 1;
 }
+.tree .photo .cloud03 {
+    position: absolute;
+    left: 28px;
+    top: 37%;
+    width: 20%;
+    z-index: -1;
+}
+.tree .photo .sun01 {
+    position: absolute;
+    right: 21%;
+    top: -17%;
+    width: 25%;
+    z-index: 1;
+    animation: tree_sun01 3s linear infinite;
+}
+@keyframes tree_sun01 {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15%); }
+    100% { transform: translateY(0); }
+}
+
 .work {
     background-color: red;
     color: #fff;
 }
 .news {
     background-color: #fff;
+}
+
+
+
+
+aside.quick {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    z-index: 99;
+    transform: translateY(-50%);
+}
+aside.quick .quick_open,
+aside.quick .quick_close {
+    display: block;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: var(--color-main);
     color: #fff;
 }
+aside.quick .quick_open::before,
+aside.quick .quick_close::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 100%;
+    height: 12px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+aside.quick .quick_open::before {
+    background-size: 13.33px;
+    
+}
+aside.quick .quick_close::before {
+    background-size: 13.33px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_15_473' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_15_473)'%3E%3Cpath d='M12 13.3998L7.10005 18.2998C6.91672 18.4831 6.68338 18.5748 6.40005 18.5748C6.11672 18.5748 5.88338 18.4831 5.70005 18.2998C5.51672 18.1165 5.42505 17.8831 5.42505 17.5998C5.42505 17.3165 5.51672 17.0831 5.70005 16.8998L10.6 11.9998L5.70005 7.0998C5.51672 6.91647 5.42505 6.68314 5.42505 6.3998C5.42505 6.11647 5.51672 5.88314 5.70005 5.6998C5.88338 5.51647 6.11672 5.4248 6.40005 5.4248C6.68338 5.4248 6.91672 5.51647 7.10005 5.6998L12 10.5998L16.9 5.6998C17.0834 5.51647 17.3167 5.4248 17.6 5.4248C17.8834 5.4248 18.1167 5.51647 18.3 5.6998C18.4834 5.88314 18.575 6.11647 18.575 6.3998C18.575 6.68314 18.4834 6.91647 18.3 7.0998L13.4 11.9998L18.3 16.8998C18.4834 17.0831 18.575 17.3165 18.575 17.5998C18.575 17.8831 18.4834 18.1165 18.3 18.2998C18.1167 18.4831 17.8834 18.5748 17.6 18.5748C17.3167 18.5748 17.0834 18.4831 16.9 18.2998L12 13.3998Z' /%3E%3C/g%3E%3C/svg%3E%0A");
+}
+aside.quick .quick_wrap ul {
+    background-color: #fff;
+    border: 1px solid var(--color-main);
+    border-radius: 30px;
+    color: var(--color-main);
+    text-align: center;
+    padding: 14px 0 7px 0 ;
+}
+aside.quick .quick_wrap ul li a,
+aside.quick .quick_wrap ul li button {
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding-top: 23px;
+    position: relative;
+}
+aside.quick .quick_wrap ul li a::before {
+    position: absolute;
+    content: "";
+    
+}
+/* 퀵이랑 나무 모바일 ㅈㅈ 다시해야함 */
+
+
+
+
 footer {
     background-color: var(--color-main);
     color: #fff;

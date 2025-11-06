@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="css/fullpage.min.css">
     <script src="js/fullpage.min.js"></script>
     <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <script src="js/count.js"></script>
 
     <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="css/main.css">
@@ -16,7 +19,7 @@
     <header class="dark">
         <h1 class="logo"><a href="index.html"><span class="blind">생명의숲 forest for life</span></a></h1>
         <nav class="gnb">
-            <button class="gnb_open"><span>메뉴열기</span></button>
+            <button class="gnb_open"><span class="blind">메뉴열기</span></button>
             <div class="gnb_wrap">
                 <ul class="depth1">
                     <li><a href="#n"><span>소개</span></a></li>
@@ -42,10 +45,84 @@
         <!-- fp-auto-height 클래스를 주면 footer 처럼 콘텐츠 높이만큼만 나타남
             section fp-auto-height-responsive 모바일에서 fullpage 안할꺼면 줘야함 -->
         <section class="visual section fp-auto-height-responsive">
-            <h2>visual</h2>
+            <h2 class="blind">팝업</h2>
+            <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                    <li class="swiper-slide">
+                        <div class="photo"><img src="image/main/visaul01.jpg" alt=""></div>
+                        <div class="txt">
+                            <div class="wrapper">
+                                <strong>2025 생명의 숲 후원의 달</strong>
+                                <h3>지금 지구와 우리를 위한  힘 모으기<br>
+                                    2025.11. 1~11.30</h3>
+                                <a href="#n">자세히보기</a>
+                            </div>
+                        </div>
+                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                    <li class="swiper-slide">
+                        <div class="photo"><img src="image/main/visaul02.jpg" alt=""></div>
+                        <div class="txt">
+                            <div class="wrapper">
+                                <strong>2025 생명의 숲 후원의 달</strong>
+                                <h3>지금 지구와 우리를 위한  힘 모으기<br>
+                                    2025.11. 1~11.30</h3>
+                                <a href="#n">자세히보기</a>
+                            </div>
+                        </div>
+                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                    <li class="swiper-slide">
+                        <div class="photo"><img src="image/main/visaul03.jpg" alt=""></div>
+                        <div class="txt">
+                            <div class="wrapper">
+                                <strong>2025 생명의 숲 후원의 달</strong>
+                                <h3>지금 지구와 우리를 위한  힘 모으기<br>
+                                    2025.11. 1~11.30</h3>
+                                <a href="#n">자세히보기</a>
+                            </div>
+                        </div>
+                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                    <li class="swiper-slide">
+                        <!-- 
+                            autoplay - 자동실행
+                            loop - 연속실행
+                            muted - 음소거 
+                        -->
+                        <div class="video"><video src="image/main/visaul04.mp4" autoplay loop muted></video></div>
+                        <div class="txt">
+                            <div class="wrapper">
+                                <strong>2025 생명의 숲 후원의 달</strong>
+                                <h3>지금 지구와 우리를 위한  힘 모으기<br>
+                                    2025.11. 1~11.30</h3>
+                                <a href="#n">자세히보기</a>
+                            </div>
+                        </div>
+                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                </ul>
+            </div> <!-- swiper -->
+            <div class="paging">
+                <ul>
+                    <!-- <li class=""><span>문구</span></li> -->
+                </ul>
+            </div>
         </section>
         <section class="tree section fp-auto-height-responsive">
-            <h2>tree</h2>
+            <div class="wrapper">
+                <div class="tit">
+                    <h2>
+                        <strong data-start="0" data-end="102302">0</strong>
+                        <span>그루</span>
+                    </h2>
+                    <p>숫자가 아니라, 마음이 자랐습니다. <br>
+                        102,302그루의 나무가 우리 모두의 내일이 되었습니다.</p>
+                </div>
+                <div class="photo">
+                    <img src="image/main/tree01.png" alt="나무" class="tree_img">
+                    <img src="image/main/tree_cloud01.png" alt="구름" class="cloud01">
+                    <img src="image/main/tree_cloud02.png" alt="구름" class="cloud02">
+                    <img src="image/main/tree_cloud03.png" alt="구름" class="cloud03">
+                    <img src="image/main/tree_sun01.png" alt="태양" class="sun01">
+                </div>
+            </div>
         </section>
         <section class="work section fp-auto-height-responsive">
             <h2>work</h2>
@@ -57,5 +134,17 @@
             <h2>footer</h2>
         </section>
     </div>
+    <aside class="quick">
+        <button class="quick_open" title="열기"><span>Quick</span></button>
+        <div class="quick_wrap">
+            <ul>
+                <li class="kakao"><a href="#n"><span>같이가치</span></a></li>
+                <li class="naver"><a href="#n"><span>해피빈</span></a></li>
+                <li class="green"><a href="#n"><span>그린짐</span></a></li>
+                <li class="top"><a href="#Main"><span>Top</span></a></li>
+            </ul>
+        </div>
+        <button class="quick_close" title="닫기"><span>Quick</span></button>
+    </aside>
 </body>
 </html>
