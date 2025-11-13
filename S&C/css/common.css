@@ -6,6 +6,7 @@
     --header-h : 100px;
     --wrapper-margin : 50px;
     --fontsize-title : 40px;
+    --accordion-margin : clamp(16px, 8vw, 120px);
 }
 @media screen and (max-width:1024px){
     :root {

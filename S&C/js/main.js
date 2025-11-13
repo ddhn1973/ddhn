@@ -19,22 +19,11 @@ $(poObj).each(function(i, e) {
 		anticipatePin: 1,
 	});
 
-	// 회전
-	gsap.to($(e).find(poObjCont), {
-		rotateX: -6,
-		ease: 'none',
-		scrollTrigger: {
-			trigger: e,
-			start:  'top +='+(poStart + i * poGap),
-			end: 'top -=30%',
-			scrub: 1,
-		},
-	});
 
 	// 스케일,어둡게
 	gsap.to($(e).find(poObjCont), {
-		scale: 0.05,
-		top: -200,
+		scale: 1,
+		top: 0,
 		ease: 'none',
 		scrollTrigger: {
 			trigger: e,
@@ -65,5 +54,76 @@ $(poObj).each(function(i, e) {
 		},
 	});
 	
+
+
+	
 });
+
+gsap.registerPlugin(ScrollTrigger);
+
+const lines = gsap.utils.toArray(".txt-front p");
+
+lines.forEach((line, i) => {
+  gsap.to(line, {
+    clipPath: "inset(0 0 0 0)", // 완전히 다 보이게
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".split",
+      start: "top top",           // split 시작할 때부터
+      end: "bottom bottom",       // 끝날 때까지 천천히
+      scrub: true,
+    }
+  });
+});
+
+
+
+let slogan = $('.split') //글자를 감싸는 영역의 이름
+let slogan_obj = $('.slogan p span') //각 줄안에 나타날 글자
+let slogan_rate_s = 1 //처음에 애니메이션 시작할때 글씨가 하단에서 몇 %정도 올라왔을때 애니메이션 시작할 것인지 (1이 100%임)
+let slogan_rate_e = 0 //마지막에 애니메이션이 끝날때 마지막 글자가 하단에서 몇 %정도 올라왔을때 종료할 것인지
+let slogan_leng = slogan_obj.length
+let slogan_scroll
+let slogan_top
+let slogan_start
+let slogan_end
+let slogan_w
+let scrolling
+let win_h
+
+slogan_ani()
+$(window).scroll(function(){
+//스크롤 할때마다 1번씩
+slogan_ani()
+})
+$(window).resize(function(){
+//브라우저가 리사이즈 될때마다 1번씩 실행
+slogan_ani()
+})
+
+function slogan_ani(){
+win_h = $(window).height()
+scrolling = $(window).scrollTop()
+slogan_top = slogan.offset().top
+slogan_start = slogan_top - win_h + (win_h * slogan_rate_s)
+slogan_end = slogan_top + slogan.height() - win_h + (win_h * slogan_rate_e)
+slogan_scroll = (scrolling - slogan_start) / (slogan_end - slogan_start) * 100
+if(slogan_start > scrolling) {
+//console.log('시작 이전')
+slogan_obj.width(0)
+}else if(slogan_end > scrolling){
+//console.log('애니메이션중')
+for(i=0; i<slogan_leng; i++){
+slogan_w = (slogan_scroll - (100/slogan_leng)*i) * slogan_leng
+if(slogan_w > 100){
+slogan_w = 100
+}
+slogan_obj.eq(i).width(slogan_w + '%')
+}
+}else{
+//console.log('종료 이후')
+slogan_obj.width('100%')
+}
+}//slogan_ani
+
 })//맨끝
