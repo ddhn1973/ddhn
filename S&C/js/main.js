@@ -162,29 +162,27 @@ $(poObj).each(function(i, e) {
 	});
 
 
-	const menu_swiper = new Swiper('.menu .swiper', { /* 팝업을 감싼는 요소의 class명 */
-		slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-		spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
-		breakpoints: {
-			640: {    /* 640px 이상일때 적용 */
-				slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
-				spaceBetween: 20,
-			},
-		},
-		centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
-		loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
-
-		navigation: {
-			nextEl: '.menu .btn_next',
-			prevEl: '.menu .btn_prev',
-		},
-		pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
-			el: '.swiper-pagination', /* 해당 요소의 class명 */
-			clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
-			type: 'fraction',  /* type fraction을 주면 paging이 숫자로 표시됨 */
-		},
+	$('.center').slick({
+		centerMode: true,
+		centerPadding: '30px',
+		slidesToShow: 3,
+	
+		prevArrow: '<button class="btn_prev"></button>',
+		nextArrow: '<button class="btn_next"></button>',
+	
+		responsive: [
+		  {
+			breakpoint: 1024,
+			settings: {
+			  arrows: false,   // 모바일에서 화살표 안 보이게 할거면 이대로 둬도 됨
+			  centerMode: true,
+			  centerPadding: '80px',
+			  slidesToShow: 2
+			}
+		  },
+		]
 	});
-
+	
 
 
 	const youtube_long_swiper = new Swiper('.long .swiper', { /* 팝업을 감싼는 요소의 class명 */
@@ -226,6 +224,29 @@ $(poObj).each(function(i, e) {
             }
         },
     });
+
+	const youtube_short_swiper = new Swiper('.youtube .short .swiper', { /* 팝업을 감싼는 요소의 class명 */
+	slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+	breakpoints: {
+		640: {    /* 640px 이상일때 적용 */
+			slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+			spaceBetween: 24,
+		},
+	},
+	centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+	loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+
+	navigation: {
+		nextEl: '.menu .btn_next',
+		prevEl: '.menu .btn_prev',
+	},
+	pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
+		el: '.swiper-pagination', /* 해당 요소의 class명 */
+		clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
+		type: 'fraction',  /* type fraction을 주면 paging이 숫자로 표시됨 */
+	},
+});
 
 
 })//맨끝

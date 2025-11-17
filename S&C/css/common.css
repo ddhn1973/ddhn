@@ -63,7 +63,7 @@ body {
     좌우여백 5% : 1260 + (1260*0.05=63) + (1260*0.05=63) = 1386
     좌우여백 3% : 1260 + (1260*0.03=37.8) + (1260*0.03=37.8) = 1335.6
 */
-@media screen and (max-width:1320px){
+@media screen and (max-width:1360px){
     .wrapper {
         width: auto;
         margin: 0 var(--wrapper-margin);
