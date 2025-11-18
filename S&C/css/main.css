@@ -653,9 +653,12 @@
         width: 100%;
     }
 }
+.youtube .short .list .swiper-slide {
+    width: 262px;
+}
 .youtube .short .list .swiper-slide a {
     display: inline-block;
-    width: 262px;
+    
     height: 466px;
 }
 .youtube .short .list .swiper-slide a .photo {

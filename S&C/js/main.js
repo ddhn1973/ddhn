@@ -164,8 +164,8 @@ $(poObj).each(function(i, e) {
 
 	$('.center').slick({
 		centerMode: true,
-		centerPadding: '30px',
-		slidesToShow: 3,
+		slidesToShow: 5,
+		centerPadding: '20px',
 	
 		prevArrow: '<button class="btn_prev"></button>',
 		nextArrow: '<button class="btn_next"></button>',
@@ -175,12 +175,9 @@ $(poObj).each(function(i, e) {
 			breakpoint: 1024,
 			settings: {
 			  arrows: false,
-			  centerMode: true,
-			  centerPadding: '80px',
-			  slidesToShow: 1,
-			  infinite: false,
+			  slidesToShow: 1
 			}
-		  },
+		  }
 		]
 	});
 	
@@ -397,7 +394,6 @@ $(poObj).each(function(i, e) {
 		breakpoints: {
 			// 2. 1025px 이상에서도 'auto'와 24px 간격을 유지하도록 확인합니다.
 			1025: {
-				slidesPerView: 6,
 				spaceBetween: 24,
 			},
 		},
