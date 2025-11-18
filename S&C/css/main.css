@@ -4,7 +4,7 @@
 @import url(layout.css);
 
 
-.full_area { height:100vh; }
+/* .full_area { height:100vh; } */
 /************ visual 시작 ************/
 .visual {
     position: relative;
@@ -41,6 +41,11 @@
     font-size: clamp(40px, 8vw, 100px);
     line-height: 1.3;
     color: var(--color-main);
+}
+@media screen and (max-width: 768px) {
+    .visual {
+        height: 600px;
+    }
 }
 /************ visual 끝 ************/
 /************ split 시작 ************/
@@ -93,7 +98,7 @@
 }
 @media screen and (max-width: 768px) {
     .split {
-        height: 200vh;
+        height: 250vh;
     }
 }
 /************ split 끝 ************/
@@ -148,7 +153,7 @@
 }
 @media screen and (max-width: 768px) {
     .egg {
-        height: 200vh;
+        height: 250vh;
     }
 }
 /************ egg 끝 ************/
@@ -156,6 +161,7 @@
 .accordion_wrap { 
     position:relative;
     z-index:-1;
+    background-color: #F2EDE8;
 }
 .accordion_wrap .accordion .cont {
     background-repeat:no-repeat;
@@ -182,10 +188,32 @@
 .accordion_wrap .accordion .cont h3 {
     font-size: clamp(32px, 8vw, 60px);
     font-weight:800;
-    margin:0 0 24px 0;
+    margin-bottom: 24px;
 }
 .accordion_wrap .accordion .cont h3 span {
     color: var(--color-main);
+}
+@media screen and (max-width: 768px) {
+    .accordion_wrap .accordion .cont {
+        height: 600px;
+    }
+    .accordion_wrap .accordion .cont.bg1 {
+        background-image: url(../images/accordion_bg01.jpg);
+    }
+    .accordion_wrap .accordion .cont.bg2 {
+        background-image: url(../images/accordion_bg02.jpg);
+    }
+    .accordion_wrap .accordion .cont.bg3 {
+        background-image: url(../images/accordion_bg03.jpg);
+    }
+    .accordion_wrap .accordion .cont h3 {
+        font-size: clamp(32px, 8vw, 60px);
+        font-weight:800;
+        margin-bottom: 16px;
+    }
+    .accordion_wrap .accordion .cont h3 span {
+        color: var(--color-main);
+    }
 }
 /************ accordion 끝 ************/
 /************ menu 시작 ************/
@@ -294,15 +322,15 @@
     height: 40px;
     border-radius: 50%;
     position: absolute;
-    top: 20%; /* 원하는 위치로 조정 */
+    top: 50%; 
     transform: translateY(-50%);
     z-index: 20;
     cursor: pointer;
 }
 
 /* 위치 */
-.btn_prev { left: 32%; }
-.btn_next { right: 32%; }
+.menu .btn_prev { left: calc(50% - 250px); }
+.menu .btn_next { right: calc(50% - 250px); }
 
 /* SVG 아이콘 */
 .btn_prev::before,
@@ -321,6 +349,49 @@
 /* 왼쪽 버튼은 반대로 뒤집기 */
 .btn_prev::before {
     transform: rotate(180deg);
+}
+@media screen and (max-width: 1024px) {
+    .menu {
+        height: 600px;
+    }
+    .menu .wrapper {
+        padding: 56px 0 32px 0;
+    }
+    
+    .menu .tit {
+        margin-bottom: 40px;
+    }
+    .menu .content .list {
+        top: 0;
+    }
+    .center .menu-item {
+        min-width: 200px;
+        max-width: 220px;
+        margin: 56px auto;
+      }
+    .menu .content .list .menu-item img {
+        width: 100%;
+        margin: 80px 0;
+    }
+    .menu .content .list .menu-item .name {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+    .menu .content .list .menu-item .more {
+        width: 40px;
+        height: 40px;
+        padding: 0;
+    }
+    .menu .content .list .menu-item .more::before {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_43_387' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_43_387)'%3E%3Cpath d='M11 13H6C5.71667 13 5.47917 12.9042 5.2875 12.7125C5.09583 12.5208 5 12.2833 5 12C5 11.7167 5.09583 11.4792 5.2875 11.2875C5.47917 11.0958 5.71667 11 6 11H11V6C11 5.71667 11.0958 5.47917 11.2875 5.2875C11.4792 5.09583 11.7167 5 12 5C12.2833 5 12.5208 5.09583 12.7125 5.2875C12.9042 5.47917 13 5.71667 13 6V11H18C18.2833 11 18.5208 11.0958 18.7125 11.2875C18.9042 11.4792 19 11.7167 19 12C19 12.2833 18.9042 12.5208 18.7125 12.7125C18.5208 12.9042 18.2833 13 18 13H13V18C13 18.2833 12.9042 18.5208 12.7125 18.7125C12.5208 18.9042 12.2833 19 12 19C11.7167 19 11.4792 18.9042 11.2875 18.7125C11.0958 18.5208 11 18.2833 11 18V13Z' /%3E%3C/g%3E%3C/svg%3E%0A");
+        right: 8px;
+    }
+    .menu .content .list .menu-item .more span {
+        display: none;
+    }
+    .center .slick-slide .food {
+        transform: scale(1);
+    }
 }
 /************ menu 끝 ************/
 /************ event 시작 ************/
@@ -455,15 +526,20 @@
 
 /************ event 끝 ************/
 /************ youtube 시작 ************/
+.swiper-slide { display: inline-block; transition: width 0.5s cubic-bezier(.22,.9,.3,1); /* width 애니메이션 */ vertical-align: top; }
+
 .youtube {
     background: url("../images/youtube_bg.jpg") no-repeat center center / cover;
     position: relative;
     width: 100%;
     height: auto;
-    padding: 234px 120px 0;
+    padding: 234px var(--wrapper-margin) 120px var(--wrapper-margin);
 }
 .youtube .long {
-    margin: 0 0 120px 0;
+    margin: 0 0 196px 0;
+}
+.youtube .long .wrapper {
+    position: relative;
 }
 .youtube .long .tit {
     margin-bottom: 80px;
@@ -486,26 +562,27 @@
     display: block;
 }
 .youtube .long .list .swiper-slide a .photo {
+    width: 404px;
+    height: 227px;
     margin: 24px 0 0 0;
 }
 .youtube .long .list .swiper-slide a .photo img {
     height: 100%;
+    border-radius: 15px;
     object-fit: cover;
 }
 .youtube .long .btn {
     position: absolute;
-    right: 0;
-    bottom: 0;
+    left: 50%;
+    bottom: -100px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0 8px;
-    transform: translateY(-50%);
+    transform: translateX(-50%);
 }
 .youtube .long .more {
     position: relative;
-    right: 0;
-    top: 0;
     border: 1px solid var(--color-main);
     color: #fff;
     background-color: var(--color-main);
@@ -526,28 +603,48 @@
 }
 .youtube .long .btn_prev, 
 .youtube .long .btn_next {
-    background: var(--color-main);
     width: 40px;
     height: 40px;
+    background: var(--color-main);
     border-radius: 50%;
+    padding: 0;
     position: relative;
+}
+/* 기존 코드의 .youtube .long .btn_prev, .youtube .long .btn_next 재정의 */
+.youtube .long .btn_prev, 
+.youtube .long .btn_next {
+    width: 40px;
+    height: 40px;
+    background: var(--color-main);
+    border-radius: 50%;
+    padding: 0;
+    position: relative !important; /* static -> relative로 변경 */
+    display: flex; /* 추가: 내부 아이콘 중앙 정렬을 위해 */
+    justify-content: center; /* 추가: 내부 아이콘 중앙 정렬을 위해 */
+    align-items: center; /* 추가: 내부 아이콘 중앙 정렬을 위해 */
+    top: auto; 
+    left: auto;
+    right: auto;
+    transform: none; 
 }
 .youtube .long .btn_prev::before, 
 .youtube .long .btn_next::before {
     position: absolute;
     content: "";
-    left: 8px;
-    top: 8px;
+    left: 50%; /* 8px -> 50%로 변경 */
+    top: 50%; /* 8px -> 50%로 변경 */
     width: 24px;
     height: 24px;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_43_493' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' transform='matrix(1 -8.74228e-08 -8.74228e-08 -1 2.09815e-06 24)' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_43_493)'%3E%3Cpath d='M14.4751 12L7.12511 19.35C6.87511 19.6 6.75428 19.8958 6.76261 20.2375C6.77095 20.5792 6.90011 20.875 7.15011 21.125C7.40011 21.375 7.69595 21.5 8.03761 21.5C8.37928 21.5 8.67511 21.375 8.92511 21.125L16.6001 13.425C16.8001 13.225 16.9501 13 17.0501 12.75C17.1501 12.5 17.2001 12.25 17.2001 12C17.2001 11.75 17.1501 11.5 17.0501 11.25C16.9501 11 16.8001 10.775 16.6001 10.575L8.90011 2.875C8.65011 2.625 8.35844 2.50417 8.02511 2.5125C7.69178 2.52083 7.40011 2.65 7.15011 2.9C6.90011 3.15 6.77511 3.44584 6.77511 3.7875C6.77511 4.12917 6.90011 4.425 7.15011 4.675L14.4751 12Z' /%3E%3C/g%3E%3C/svg%3E%0A");
     background-position: center center;
-    background-repeat: no-repeat;
+     background-repeat: no-repeat;
     background-size: cover;
+    transform: translate(-50%, -50%);
 }
 .youtube .long .btn_prev::before {
-    transform: rotate(180deg);
+    transform: translate(-50%, -50%) rotate(180deg);
 }
+
 @media screen and (max-width:1020px) {
     .youtube .long .list .swiper {
         width: 100%;
@@ -556,7 +653,20 @@
         width: 100%;
     }
 }
-
+.youtube .short .list .swiper-slide a {
+    display: inline-block;
+    width: 262px;
+    height: 466px;
+}
+.youtube .short .list .swiper-slide a .photo {
+    width: 262px;
+    height: 466px;
+}
+.youtube .short .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
 /************ youtube 끝 ************/
 /************ footer 시작 ************/
 footer {
