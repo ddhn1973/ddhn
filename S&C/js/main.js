@@ -164,7 +164,7 @@ $(poObj).each(function(i, e) {
 
 	$('.center').slick({
 		centerMode: true,
-		slidesToShow: 5,
+		slidesToShow: 3,
 		centerPadding: '20px',
 	
 		prevArrow: '<button class="btn_prev"></button>',
