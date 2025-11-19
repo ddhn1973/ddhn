@@ -397,4 +397,8 @@ $(poObj).each(function(i, e) {
             scrollTop : 0
         }, 500)
     })
+	
+	window.addEventListener("load", () => {
+		ScrollTrigger.refresh();
+	});
 })//맨끝
