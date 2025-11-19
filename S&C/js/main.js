@@ -147,7 +147,6 @@ $(poObj).each(function(i, e) {
 		let top = egg.offset().top;
 	
 		let progress = (scr - (top - winH * egg_rate_s)) / (winH * egg_rate_e);
-	
 		progress = Math.min(1, Math.max(0, progress));
 	
 		txt.css({
@@ -155,12 +154,14 @@ $(poObj).each(function(i, e) {
 			transform: `translate(-50%, -50%) scale(${0.2 + progress * 0.7})`
 		});
 	
-		let maxMove = $(window).width() * 0.16; 
+		// ⭐ PC/모바일 분기
+		let ww = $(window).width();
+		let maxMove = ww >= 769 ? ww * 0.12 : ww * 0.18;
+	
 		let move = progress * maxMove;
 		left.css("transform", `translateX(-${move}px)`);
 		right.css("transform", `translateX(${move}px)`);
 	});
-
 
 	$('.center').slick({
 		centerMode: true,
