@@ -736,6 +736,7 @@ footer {
     background-color: var(--color-title);
     color: #fff;
 }
+
 footer .f_sub {
     padding: 100px 0;
 }
@@ -743,7 +744,7 @@ footer .f_sub .wrapper {
     position: relative;
     display: flex;
     gap: 0 64px;
-}
+    }
 footer .f_sub .f_logo img {
     width: 160px;
 }
@@ -768,6 +769,14 @@ footer .f_sub .copyright {
 footer .f_sub .f_ff {
     display: flex;
     gap: 0 24px;
+}
+footer .f_sub .wrapper .top {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 2.5294em;
+    padding: 0 0.9412em 0 0.9412em;
+    background-color: var(--color-main);
 }
 @media screen and (max-width:1280px) {
     footer .f_sub .wrapper {

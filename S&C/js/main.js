@@ -391,4 +391,10 @@ $(poObj).each(function(i, e) {
 			},
 		},
 	});
+
+	$('footer .f_sub .wrapper .top').on('click', function(){
+        $('html, body').animate({
+            scrollTop : 0
+        }, 500)
+    })
 })//맨끝
