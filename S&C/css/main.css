@@ -42,11 +42,6 @@
     line-height: 1.3;
     color: var(--color-main);
 }
-@media screen and (max-width: 768px) {
-    .visual {
-        height: 600px;
-    }
-}
 /************ visual 끝 ************/
 /************ split 시작 ************/
 .split {
