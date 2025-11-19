@@ -383,7 +383,8 @@
     }
     .menu .content .list .menu-item .more::before {
         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_43_387' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_43_387)'%3E%3Cpath d='M11 13H6C5.71667 13 5.47917 12.9042 5.2875 12.7125C5.09583 12.5208 5 12.2833 5 12C5 11.7167 5.09583 11.4792 5.2875 11.2875C5.47917 11.0958 5.71667 11 6 11H11V6C11 5.71667 11.0958 5.47917 11.2875 5.2875C11.4792 5.09583 11.7167 5 12 5C12.2833 5 12.5208 5.09583 12.7125 5.2875C12.9042 5.47917 13 5.71667 13 6V11H18C18.2833 11 18.5208 11.0958 18.7125 11.2875C18.9042 11.4792 19 11.7167 19 12C19 12.2833 18.9042 12.5208 18.7125 12.7125C18.5208 12.9042 18.2833 13 18 13H13V18C13 18.2833 12.9042 18.5208 12.7125 18.7125C12.5208 18.9042 12.2833 19 12 19C11.7167 19 11.4792 18.9042 11.2875 18.7125C11.0958 18.5208 11 18.2833 11 18V13Z' /%3E%3C/g%3E%3C/svg%3E%0A");
-        right: 8px;
+        right: 7px;
+        top: 7px;
     }
     .menu .content .list .menu-item .more span {
         display: none;
@@ -482,7 +483,8 @@
     }
     .event .more::before {
         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_43_387' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_43_387)'%3E%3Cpath d='M11 13H6C5.71667 13 5.47917 12.9042 5.2875 12.7125C5.09583 12.5208 5 12.2833 5 12C5 11.7167 5.09583 11.4792 5.2875 11.2875C5.47917 11.0958 5.71667 11 6 11H11V6C11 5.71667 11.0958 5.47917 11.2875 5.2875C11.4792 5.09583 11.7167 5 12 5C12.2833 5 12.5208 5.09583 12.7125 5.2875C12.9042 5.47917 13 5.71667 13 6V11H18C18.2833 11 18.5208 11.0958 18.7125 11.2875C18.9042 11.4792 19 11.7167 19 12C19 12.2833 18.9042 12.5208 18.7125 12.7125C18.5208 12.9042 18.2833 13 18 13H13V18C13 18.2833 12.9042 18.5208 12.7125 18.7125C12.5208 18.9042 12.2833 19 12 19C11.7167 19 11.4792 18.9042 11.2875 18.7125C11.0958 18.5208 11 18.2833 11 18V13Z' /%3E%3C/g%3E%3C/svg%3E%0A");
-        right: 8px;
+        right: 7px;
+        top: 7px;
     }
     .event .more span {
         display: none;
@@ -525,8 +527,6 @@
 
 /************ event 끝 ************/
 /************ youtube 시작 ************/
-.swiper-slide { display: inline-block; transition: width 0.5s cubic-bezier(.22,.9,.3,1); /* width 애니메이션 */ vertical-align: top; }
-
 .youtube {
     background: url("../images/youtube_bg.jpg") no-repeat center center / cover;
     position: relative;
@@ -553,6 +553,7 @@
 .youtube .long .list .swiper {
     width: 100%;
     box-sizing: border-box;
+    padding: 58px 0;
 }
 .youtube .long .list {
     margin: 0 0 32px 0;
@@ -561,15 +562,22 @@
     display: block;
 }
 .youtube .long .list .swiper-slide a .photo {
-    width: 404px;
-    height: 227px;
-    margin: 24px 0 0 0;
+    overflow: hidden;
+    border-radius: 15px;
 }
 .youtube .long .list .swiper-slide a .photo img {
+    width: 100%;
     height: 100%;
-    border-radius: 15px;
     object-fit: cover;
 }
+.youtube .long .list .swiper-slide {
+    transition: transform 0.5s;
+}
+.youtube .long .list .swiper-slide-active {
+    z-index: 9999;
+    transform: scale3d(1.5, 1.5, 1);
+}
+
 .youtube .long .btn {
     position: absolute;
     left: 50%;
@@ -643,35 +651,84 @@
 .youtube .long .btn_prev::before {
     transform: translate(-50%, -50%) rotate(180deg);
 }
-
-@media screen and (max-width:1020px) {
-    .youtube .long .list .swiper {
-        width: 100%;
-    }
-    .youtube .long .list .swiper-slide a .photo img {
-        width: 100%;
-    }
-}
 .youtube .short .list .swiper-slide {
     width: 262px;
-}
-.youtube .short .list .swiper-slide a {
-    display: inline-block;
-}
-.long-swiper .swiper-slide-active a {
-    height: 348px;
 }
 .youtube .short .list .swiper-slide a .photo {
     width: 100%;
     height: 100%;
 }
-
 .youtube .short .list .swiper-slide a .photo img {
     width: 100%;
     height: 100%;
     border-radius: 15px;
 }
-
+@media screen and (max-width:1024px) {
+    .youtube {
+        padding: 120px var(--wrapper-margin) 120px var(--wrapper-margin);
+    }
+    .youtube .long {
+        margin: 0 0 156px 0;
+    }
+    .youtube .long .list .swiper-slide-active {
+        transform: scale3d(1, 1, 1);
+    }
+    .youtube .long .tit {
+        margin-bottom: 32px;
+    }
+    .youtube .long .btn {
+        bottom: -30px;
+    }
+}
+@media screen and (max-width:768px) {
+    .youtube {
+        background: url("../images/youtube_bg.jpg") no-repeat center center / cover;
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 56px var(--wrapper-margin) 56px var(--wrapper-margin);
+    }
+    .youtube .long {
+        margin: 0 0 106px 0;
+    }
+    .youtube .long .tit {
+        margin-bottom: 32px;
+    }
+    .youtube .long .list .swiper {
+        padding: 0;
+    }
+    .youtube .long .list {
+        margin: 0 0 32px 0;
+    }
+    .youtube .long .btn {
+        bottom: -56px;
+    }
+    .youtube .long .more {
+        width: 40px;
+        height: 40px;
+        padding: 0;
+    }
+    .youtube .long .more::before {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_43_387' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_43_387)'%3E%3Cpath d='M11 13H6C5.71667 13 5.47917 12.9042 5.2875 12.7125C5.09583 12.5208 5 12.2833 5 12C5 11.7167 5.09583 11.4792 5.2875 11.2875C5.47917 11.0958 5.71667 11 6 11H11V6C11 5.71667 11.0958 5.47917 11.2875 5.2875C11.4792 5.09583 11.7167 5 12 5C12.2833 5 12.5208 5.09583 12.7125 5.2875C12.9042 5.47917 13 5.71667 13 6V11H18C18.2833 11 18.5208 11.0958 18.7125 11.2875C18.9042 11.4792 19 11.7167 19 12C19 12.2833 18.9042 12.5208 18.7125 12.7125C18.5208 12.9042 18.2833 13 18 13H13V18C13 18.2833 12.9042 18.5208 12.7125 18.7125C12.5208 18.9042 12.2833 19 12 19C11.7167 19 11.4792 18.9042 11.2875 18.7125C11.0958 18.5208 11 18.2833 11 18V13Z' /%3E%3C/g%3E%3C/svg%3E%0A");
+        right: 7px;
+        top: 7px;
+    }
+    .youtube .long .more span {
+        display: none;
+    }
+    .youtube .short .list .swiper-slide {
+        width: 211px;
+    }
+    .youtube .short .list .swiper-slide a .photo {
+        width: 100%;
+        height: 100%;
+    }
+    .youtube .short .list .swiper-slide a .photo img {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+    }
+}
 /************ youtube 끝 ************/
 /************ footer 시작 ************/
 footer {
