@@ -1,0 +1,30 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+@import url(layout.css);
+.swiper-slide {
+    padding: 0 var(--wrapper-margin);
+}
+
+.swiper-slide .slide-inner {
+    height: clamp(300px, 45vw, 550px);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0; /* 필요하면 */
+}
+.popup1 .slide-inner {
+    background-image: url("../images/visual01.jpg");
+}
+.popup2 .slide-inner {
+    background-image: url("../images/visual02.jpg");
+}
+.popup3 .slide-inner {
+    background-image: url("../images/visual03.jpg");
+}
+.popup4 .slide-inner {
+    background-image: url("../images/visual04.jpg");
+}
+.visual .swiper-slide h3 {
+    margin: 32px 0 0 0;
+}
