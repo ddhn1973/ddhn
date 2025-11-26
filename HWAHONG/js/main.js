@@ -70,30 +70,61 @@ $(document).ready(function () {
 
 
     const ex_swiper = new Swiper('.ex .swiper', { /* 팝업을 감싼는 요소의 class명 */
-	slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
-	breakpoints: {
-		640: {    /* 640px 이상일때 적용 */
-			slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
-			spaceBetween: 20,
-		},
-	},
-	//centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
-	loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
-	autoplay: {  /* 팝업 자동 실행 */
-		delay: 2500,
-		disableOnInteraction: true,
-	},
-	navigation: {
-		nextEl: '.btn_next',
-		prevEl: '.btn_prev',
-	},
-	pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
-		el: '.swiper-pagination', /* 해당 요소의 class명 */
-		clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
-		type: 'fraction',  /* type fraction을 주면 paging이 숫자로 표시됨 */
-	},
-});
-swiper.autoplay.stop();  /* 일시정지 기능 */
-swiper.autoplay.start();  /* 재생 기능 */
+        slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            640: {    /* 640px 이상일때 적용 */
+                slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 16,
+            },
+        },
+        //centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+        autoplay: {  /* 팝업 자동 실행 */
+            delay: 2500,
+            disableOnInteraction: true,
+        },
+        navigation: {
+            nextEl: '.btn_next',
+            prevEl: '.btn_prev',
+        },
+        pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
+            el: '.swiper-pagination', /* 해당 요소의 class명 */
+            clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
+            type: 'fraction',  /* type fraction을 주면 paging이 숫자로 표시됨 */
+        },
+    });
+    const pu_swiper = new Swiper('.pu .swiper', {
+
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: true,
+        },
+    
+        loop: true,
+    
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            type: 'bullets',  // bullet 타입으로 변경
+        },
+    
+    });
+
+    gsap.registerPlugin(ScrollTrigger);
+    const sections =  document.querySelector(".section");  //좌우요소를 감싸는 요소
+    const large =  document.querySelector(".section .cont_wrap .cont"); //스크롤될 요소
+    gsap.to(large, {
+        y: () => (window.innerHeight - large.clientHeight - 64),  /* 실제 스크롤 값보다 더 스크롤 할 값 - 필요없으면 0 */
+        ease: "none",
+        scrollTrigger: {
+            trigger: sections,
+            pin: true,
+            start: "top 60px", /* 좌우로 스크롤 될 동안의 위치, top top 상단에 고정, top 20% 상단에서 20% 떨어져서 */
+            end: () => "+=500",
+            scrub: 0.5, 
+            markers: false,
+            invalidateOnRefresh: true,
+        }
+    });
 }); // 맨끝
