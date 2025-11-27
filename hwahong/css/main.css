@@ -341,6 +341,10 @@
         .contents .cont2 .cont2_right .inner h3 {
             font-size: 20px;
         }
+        .contents .cont1 img,
+        .contents .cont2 img {
+        filter: grayscale(0%);
+    }
     }
     .ex .ex_inner {
         display: flex;
