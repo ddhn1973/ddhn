@@ -394,6 +394,7 @@
     .ex .ex_inner .ex_right {
         width: 37.8%;
         padding: 100px 0 100px 100px;
+        overflow: hidden;
     }
     .ex .ex_inner .btn_wrap {
         display: flex;
