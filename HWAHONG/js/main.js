@@ -133,4 +133,13 @@ $(document).ready(function () {
             }
         });
     });
+    $('footer .call_group .call_group_inner .top').on('click', function(){
+        $('html, body').animate({
+            scrollTop : 0
+        }, 500)
+    })
+	
+	window.addEventListener("load", () => {
+		ScrollTrigger.refresh();
+	});
 }); // 맨끝

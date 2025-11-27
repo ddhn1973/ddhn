@@ -705,7 +705,7 @@
     .section { 
         display:block;
         overflow:hidden;
-        max-height:140vh;
+        max-height:120vh;
         border-top: 0px;
         padding-top: 0;
     }
@@ -829,7 +829,10 @@ footer .call_group {
 footer .call_group .call_group_inner {
     padding: 0 var(--wrapper-margin);
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+}
+footer .call_group .call_group_inner .top {
+    font-size: 32px;
 }
 footer .call_group .call_group_inner ul {
     display: flex;
@@ -863,6 +866,9 @@ footer .copyright {
     footer .call_group {
         padding: 32px 0;
     }
+    footer .call_group .call_group_inner .top {
+        font-size: 24px;
+    }
     footer .call_group .call_group_inner .num span {
         font-size: 24px;
     }
@@ -888,6 +894,9 @@ footer .copyright {
     }
     footer .call_group {
         padding: 16px 0;
+    }
+    footer .call_group .call_group_inner .top {
+        font-size: 16px;
     }
     footer .call_group .call_group_inner .num span {
         font-size: 16px;
