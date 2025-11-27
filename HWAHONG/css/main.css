@@ -222,6 +222,16 @@
         font-size: 32px;
         margin: 16px 0 0 0;
     }
+    .contents .cont1 img,
+    .contents .cont2 img {
+        filter: grayscale(100%);
+        transition: .4s ease;   /* 부드럽게 */
+    }
+
+    .contents .cont1 a:hover img,
+    .contents .cont2 a:hover img {
+        filter: grayscale(0%);
+    }
     @media screen and (max-width:1024px) {
         .contents {
             margin: 160px 0 0 0;
