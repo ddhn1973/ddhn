@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+    <title>서울도서관</title>
+</head>
+<body>
+    <header>
+        <h1 class="logo"><a href="index.html"><span class="blind">서울도서관</span></a></h1>
+        <nav class="gnb">
+            <button class="gnb_open"><span class="blind">메뉴열기</span></button>
+            <div class="gnb_wrap">
+                <ul class="depth1">
+                    <li><a href="#n"><span>ABOUT US</span></a></li>
+                    <li><a href="#n"><span>PRODUCT</span></a></li>
+                    <li><a href="#n"><span>COMMUNITY</span></a></li>
+                    <li><a href="#n"><span>CONTACT US</span></a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="util">
+            <div class="lang">
+                <button class="lang_open"><span class="blind">언어 선택 열기</span></button>
+            </div>
+        </div>
+    </header>
+    <!-- *********************** header 끝 *********************** -->
+    <section class="visual"></section>
+    <section class="reco">
+        <div class="ai"></div>
+        <div class="newhot"></div>
+    </section>
+    <section class="service-menu"></section>
+    <section class="noti">
+        <div class="wrapper">
+                    <div class="tit">
+                        <h2  data-aos="fade-up">지금, 도서관</h2>
+                        <p  data-aos="fade-up">서울도서관의 최신 소식을 <br>안내드립니다.</p>
+                    </div><!--tit-->
+                    <div class="inner">
+                        <div class="notice" data-aos="fade-left">
+                            <h3>공지사항</h3>
+                            <ul>
+                                <li>
+                                    <a href="#n">
+                                        <h4>2026년 상반기 서울도서관 자원봉사자(나눔벗) 모집 공고</h4>
+                                        <span>25-09-03</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#n">
+                                        <h4>「도서관은 핫하다: 끄고, 도서관으로(Off&Library)」 캠페인 안내</h4>
+                                        <span>25-08-22</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#n">
+                                        <h4>[행사] 서울 문화의 밤 12월 방구석 북토크 안내</h4>
+                                        <span>25-06-15</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#n">
+                                        <h4>시청건물 공사에 따른 자가반납기 이용 우회 안내</h4>
+                                        <span>25-03-18</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#n">
+                                        <h4>보존서고 장서점검 안내</h4>
+                                        <span>24-10-09</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- 마우스 오버할때 이미지가 변경되어야 하는 경우
+                                 이미지는 background 처리해야함
+                                 대체텍스트는 써줘야함, 글자는 css로 display:none -->
+                            <a href="#n" class="more"><span>더보기</span></a>
+                        </div><!--notice-->
+                        <div class="service" data-aos="fade-left" data-aos-delay="300">
+                            <ul>
+                                <li class="icon1"><a href="#n">프로그램</a></li>
+                                <li class="icon2"><a href="#n">참여</a></li>
+                                <li class="icon3"><a href="#n">SNS</a></li>
+                                <li class="icon4"><a href="#n">행사</a></li>
+                            </ul>
+                        </div><!--service-->
+                    </div><!--inner-->
+                </div><!--wrapper-->
+    </section>
+    <section class="page">
+        <div class="wrapper">
+                    <div class="tit">
+                        <h2>페이지 너머의 이야기</h2>
+                    </div>
+                    <div class="list">
+                        <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                            <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                                <li class="swiper-slide long"><!--짧은거 short 긴거 long -->
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/story01.jpg" alt=""></div>
+                                        <div class="txt">
+                                            <h3>서울도서관 사서가 들려주는 책 이야기</h3>
+                                            <p>가을의 아름다움과 함께  우리나라의 유네스코 세계유산을 만나는 특별한 여행을 떠나보세요</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide short"><!--짧은거 short 긴거 long -->
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/story02.jpg" alt=""></div>
+                                        <div class="txt">
+                                            <h3>북큐레이션 12월 - 너의 어린 마음에게</h3>
+                                            <p>어린 마음에게 전하고 싶은 따뜻한 그림 한 조각은 어떤 모양일까요? 일반자료실과 장애인자료실이 함께 준비했어요! 다채로운 그림책과 함께 행복한 연말 보내십시오! 12월 북큐레이션 추천도서를 읽고 좋았던 문장을 댓글로 남겨주세요! 북큐레이션 추천도서 목록은 프로필 링크의 "서울도서관 추천도서"에서 확인 가능합니다.</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide long"><!--짧은거 short 긴거 long -->
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/story03.jpg" alt=""></div>
+                                        <div class="txt">
+                                            <h3>뚜벅뚜벅 걸어서 세계유산 속으로</h3>
+                                            <p>가을의 아름다움과 함께 우리나라의 유네스코 세계유산을 만나는 특별한 여행을 떠나보세요</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide short"><!--짧은거 short 긴거 long -->
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/story04.jpg" alt=""></div>
+                                        <div class="txt">
+                                            <h3>12월 방구석 북토크 - 책 읽는 시민이 답이다</h3>
+                                            <p>디지털 시대, 우리는 여전히 잘 ‘읽고’ 있나요? 환경과 매체의 변화 속에서 ‘읽기’의 의미와 방식도 달라지고 있습니다. 12월 북토크에서는 문해력의 위기를 사회적 과제로 바라보고,  새로운 독서문화의 가능성을 함께 모색합니다. 🎬EBS 다큐멘터리 <문해력 시리즈>를 제작한 김지원 PD와📚공공도서관의 경계를 넘어 새로운 길을 열어온 오지은 서울도서관장이각자의 시선으로 ‘읽기의 전환점’에 대해 이야기합니다. 읽기의 현재와 미래를 생각하는 시간, 올해의 마지막 북토크에서 만나요!</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide long"><!--짧은거 short 긴거 long -->
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/story05.jpg" alt=""></div>
+                                        <div class="txt">
+                                            <h3>‘어쩔수가없다’로 막을 연 제30회 부산국제영화제</h3>
+                                            <p>9월 24일 개봉, 박찬욱 감독 영화 어쩔수가없다 각본은 2025년 하반기 을유문화사에서 출간 예정</p>
+                                            <span>자세히보기</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide short"><!--짧은거 short 긴거 long -->
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/story06.jpg" alt=""></div>
+                                        <div class="txt">
+                                            <h3>잘 살아가기 위한 삶의 방식, 자기 돌봄
+                                                그리고 내가 만들어 가는 ‘내가 원하는 삶’</h3>
+                                            <p>버티라는 말이 유행처럼 돌던 때가 있었다. 하지만 그렇게 지나가기를 기다리는 것만으로는 괜찮아지지 않았다. 이 책은 지친 나를 돌보고 치유하는 방법이 뭔지, 나 자신을 어떻게 알 수 있는지 살펴본다. 그리고 자기 돌봄을 넘어 자기 삶의 주체가 되어 나에게 맞는 삶을 만들어 가는 방법이 무엇인지 소크라테스, 장 자크 루소, 에리히 프롬, 미셸 푸코, 공자 등 동서양 철학자의 사상과 종교적 가르침, 소설, 시 등을 통해 제시해 준다.</p>
+                                            <span>자세히보기</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide short"><!--짧은거 short 긴거 long -->
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/story07.jpg" alt=""></div>
+                                        <div class="txt">
+                                            <h3>을유헤드라인 #어떤예술은사라지지않는다</h3>
+                                            <p>막상 전시장을 갔을 때 눈길을 끈 것은 높이 4m에 육박하는 거대한 검은색 덩어리들이 벽에 걸려 있는 모습이었다. 압도적인 그 작품들을 보면서 이건 무슨 뜻으로 만든 작품일까? 라는 질문이 들었다. 어떤 예술은 사라지지 않는다를 보면 그 답을 찾을 수 있다</p>
+                                            <span>자세히보기</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!--list-->
+                    <div class="ctrl_btn">
+                        <button class="btn_prev"><span class="blind">이전팝업보기</span></button>
+                        <button class="btn_next"><span class="blind">다음팝업보기</span></button>
+                    </div>
+                    <div class="more"><a href="#n"><span>더보기</span></a></div>
+                </div><!--wrapper-->
+    </section>
+    <section class=""></section>
+    <section class=""></section>
+    <!-- *********************** footer 시작 *********************** -->
+    <footer>
+        <div class="logo_group">
+            <div class="logo_group_inner">
+                <div class="logo"><a href="index.html"><img src="images/logo.png" alt="화홍"></a></div>
+                <div class="nav">
+                    <ul>
+                        <li><a href="#n">화홍산업(주)</a></li>
+                        <li><a href="#n">개인정보처리방침</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="call_group">
+            <div class="call_group_inner">
+                <button class="top"><span>TOP</span></button>
+                <ul class="num">
+                    <li><span>TEL.031.223.1994</span></li>
+                    <li><span>FAX.031.223.4748</span></li>
+                </ul>
+            </div>
+        </div>
+        <address>경기도 화성시 효행로 205번길 81-18</address>
+        <div class="copyright">Copyright(C) 2017 meere dp All Rights Reserved</div>
+    </footer>
+</body>
+</html>
