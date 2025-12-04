@@ -2,22 +2,22 @@
 :root {
     --color-title : #1d1d1d;
     --color-basic : #555;
-    --color-main : #D84727;
+    --color-main : #0088FF;
     --header-h : 100px;
     --wrapper-margin : 50px;
-    --fontsize-title : 40px;
-    --accordion-margin : clamp(16px, 8vw, 120px);
+    --fontsize-title : 60px;
 }
 @media screen and (max-width:1024px){
     :root {
         --header-h : 70px;
+        --fontsize-title : 40px;
     }
 }
 @media screen and (max-width:768px){
     :root {
         --header-h : 56px;
         --wrapper-margin : 16px;
-        --fontsize-title : 32px;
+        --fontsize-title : 24px;
     }
 }
 html {
