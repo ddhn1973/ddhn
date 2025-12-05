@@ -83,4 +83,20 @@ $(document).ready(function () {
         $(this).removeClass('active')
         $('.map .list').removeClass('over')
     })
+
+    $('footer .f_util .family_site .family_open').on('click', function(){
+        $('footer .f_util .family_site').addClass('open')
+        $('footer .f_util .family_site .family_wrap').slideDown()
+    })
+    $('footer .f_util .family_site .family_close').on('click', function(){
+        $('footer .f_util .family_site').removeClass('open')
+        $('footer .f_util .family_site .family_wrap').slideUp()
+    })
+
+    /* top버튼을 클릭하면 상단으로 이동 */
+    $('footer .f_util .top').on('click', function(){
+        $('html, body').animate({
+            scrollTop : 0
+        }, 500)
+    })
 });
