@@ -399,6 +399,7 @@
     }
     .service-menu .btns li a {
         width: 100%;
+        height: 130px;
     }
 }
 /********************* noti *********************/
@@ -628,6 +629,17 @@
     }
     .noti .inner .service ul li a {
         font-size: 20px;
+    }
+}@media screen and (max-width:450px){
+    .noti .inner .notice ul li a h4 {
+        width: 100%;
+    }
+    .noti .inner .notice {
+        width: 100%;
+        min-width: 0;
+    }
+    .noti .inner .notice ul li a span {
+        display: none;
     }
 }
 /********************* noti *********************/
