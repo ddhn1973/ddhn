@@ -291,11 +291,11 @@
     overflow: hidden;
 }
 .service-menu .btns::before {
-    width: 470px;
+    width: 626.67px;
     height: 174px;
 }
 .service-menu .btns::after {
-    width: 467px;
+    width: 616px;
     height: 184px;
 }
 .service-menu .btns::before,
@@ -308,11 +308,11 @@
     background-size: cover;
 }
 .service-menu .btns::before {
-    right: 105%;
+    right: 110%;
     background-image: url("../images/books_left.png");
 }
 .service-menu .btns::after {
-    left: 105%;
+    left: 110%;
     background-image: url("../images/books_right.png");
 }
 .service-menu .wrapper {
