@@ -1,0 +1,28 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+@import url(layout.css);
+
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: var(--header-h);
+    color: var(--color-title);
+    padding: 0 var(--wrapper-margin);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+}
+header .logo a {
+    display: block;
+    width: 75px;
+    height: 55px;
+    background: url(../images/logo.png) no-repeat center center / cover;
+}
+header .gnb li:hover a span{
+    font-weight: 700;
+}
