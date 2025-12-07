@@ -26,3 +26,56 @@ header .logo a {
 header .gnb li:hover a span{
     font-weight: 700;
 }
+.project .wrapper {
+    margin-top: 140px;
+}
+.project .wrapper .txt {
+    width: 45.24%;
+}
+.project .wrapper .txt .tit strong {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.project .wrapper .txt .tit h3 {
+    font-size: 60px;
+    font-weight: 700;
+    margin: 20px 0 40px 0;
+    color: #D84727;
+}
+.project .wrapper .txt .tit a {
+    display: block;
+    border: 1px solid #1d1d1d;
+    border-radius: 50px;
+    color: #1d1d1d;
+    font-weight: 700;
+    padding: 16px 20px;
+    width: 226px;
+}
+.project .wrapper .txt .tit a:hover {
+    background-color: #D84727;
+    border: 1px solid #fff;
+    color: #fff;
+}
+.project .wrapper .concept {
+    margin: 60px 0 40px 0;
+}
+.project .wrapper .concept h3 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1d1d1d;
+}
+.project .wrapper .tag {
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0;
+}
+.project .wrapper .tag strong {
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.project .wrapper .tag .date strong,
+.project .wrapper .tag .key strong {
+    margin-right: 16px;
+}
